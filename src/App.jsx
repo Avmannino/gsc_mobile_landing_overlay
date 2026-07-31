@@ -3,8 +3,7 @@ import "./App.css";
 const PROGRAMS_URL =
   "https://wingsarenact.wixstudio.com/gscnewsite/programs";
 
-const MEMBERSHIP_URL =
-  "https://wingsarenact.wixstudio.com/gscnewsite/membership";
+const LOGIN_URL = "https://www.greenwichskatingclub.org/login";
 
 function ArrowIcon() {
   return (
@@ -73,9 +72,11 @@ function App() {
       </div>
 
       <section className="overlay-content">
-        <p className="overlay-eyebrow">
-          Greenwich Skating Club
-        </p>
+        <img
+          className="overlay-logo"
+          src={`${import.meta.env.BASE_URL}gsc-logo.png`}
+          alt="Greenwich Skating Club"
+        />
 
         <h1 className="overlay-heading">
           <span>Where Champions</span>
@@ -108,12 +109,12 @@ function App() {
 
           <a
             className="overlay-button overlay-button--secondary"
-            href={MEMBERSHIP_URL}
+            href={LOGIN_URL}
             target="_top"
           >
             <span className="button-content">
               <MemberIcon />
-              <span>Join the Club</span>
+              <span>Crossbar Login</span>
             </span>
 
             <ArrowIcon />

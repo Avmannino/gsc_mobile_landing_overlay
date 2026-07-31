@@ -141,15 +141,12 @@ svg {
   margin-left: clamp(22px, 6vw, 40px);
 }
 
-.overlay-eyebrow {
+.overlay-logo {
+  display: block;
+  align-self: flex-start;
+  height: clamp(85px, 23.5vw, 119px);
+  width: auto;
   margin: 0 0 20px;
-  color: rgba(255, 255, 255, 0.78);
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(15px, 4.2vw, 19px);
-  font-weight: 700;
-  letter-spacing: 0.17em;
-  line-height: 1.1;
-  text-transform: uppercase;
 }
 
 .overlay-heading {
@@ -198,6 +195,7 @@ svg {
 
 .overlay-buttons {
   display: grid;
+  justify-items: start;
   gap: 14px;
   width: 100%;
   margin-top: 36px;
@@ -205,17 +203,17 @@ svg {
 
 .overlay-button {
   display: flex;
-  min-height: 70px;
+  min-height: 56px;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  width: 100%;
-  padding: 0 20px;
+  gap: 12px;
+  width: clamp(185px, 52vw, 245px);
+  padding: 0 16px;
   border-radius: 8px;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(20px, 5.6vw, 27px);
+  font-size: clamp(15px, 4.4vw, 20px);
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   line-height: 1;
   text-transform: uppercase;
   transition:
@@ -248,7 +246,7 @@ svg {
   display: flex;
   min-width: 0;
   align-items: center;
-  gap: 13px;
+  gap: 10px;
 }
 
 .button-content span {
@@ -256,8 +254,8 @@ svg {
 }
 
 .button-icon {
-  width: 27px;
-  height: 27px;
+  width: 22px;
+  height: 22px;
   flex: 0 0 auto;
   fill: none;
   stroke: currentColor;
@@ -267,8 +265,8 @@ svg {
 }
 
 .button-arrow {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   flex: 0 0 auto;
   fill: none;
   stroke: currentColor;
@@ -325,7 +323,7 @@ svg {
     padding-bottom: 38px;
   }
 
-  .overlay-eyebrow {
+  .overlay-logo {
     margin-bottom: 15px;
   }
 
@@ -343,7 +341,7 @@ svg {
   }
 
   .overlay-button {
-    min-height: 62px;
+    min-height: 50px;
   }
 }
 
@@ -366,23 +364,23 @@ svg {
   }
 
   .overlay-button {
-    min-height: 60px;
-    padding-inline: 15px;
-    font-size: 19px;
+    min-height: 48px;
+    padding-inline: 12px;
+    font-size: 14px;
   }
 
   .button-content {
-    gap: 9px;
+    gap: 7px;
   }
 
   .button-icon {
-    width: 23px;
-    height: 23px;
+    width: 18px;
+    height: 18px;
   }
 
   .button-arrow {
-    width: 21px;
-    height: 21px;
+    width: 16px;
+    height: 16px;
   }
 }
 
