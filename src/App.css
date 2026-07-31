@@ -1,0 +1,420 @@
+:root {
+  --gsc-navy-darkest: rgba(22, 49, 118, 0.93);
+  --gsc-navy-dark: rgba(31, 65, 155, 0.93);
+  --gsc-navy: rgba(41, 78, 165, 0.93);
+  --gsc-blue: #174da7;
+  --gsc-red: #e51837;
+  --gsc-red-dark: #c21430;
+  --gsc-white: #ffffff;
+
+  font-family: "Montserrat", Arial, sans-serif;
+  color: var(--gsc-white);
+  background: transparent;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+body {
+  background-color: transparent !important;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+svg {
+  display: block;
+}
+
+/* -------------------------------------------------------
+   Main mobile overlay
+------------------------------------------------------- */
+
+.mobile-landing-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 690px;
+  overflow: hidden;
+  background: transparent;
+  isolation: isolate;
+}
+
+/*
+  Both shapes use the same clip-path curve; the navy shape's
+  box is inset 5px on the right so a red sliver shows through.
+*/
+.shape-border {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  min-height: 690px;
+  overflow: hidden;
+  clip-path: url(#gsc-shape-clip);
+  background: var(--gsc-red);
+  filter: drop-shadow(
+    18px 16px 30px rgba(1, 15, 40, 0.2)
+  );
+}
+
+.shape-fill {
+  position: absolute;
+  inset: 0 5px 0 0;
+  overflow: hidden;
+  clip-path: url(#gsc-shape-clip);
+  background:
+    radial-gradient(
+      circle at 82% 38%,
+      rgba(33, 89, 185, 0.35),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 18% 82%,
+      rgba(22, 82, 176, 0.22),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      var(--gsc-navy-darkest) 0%,
+      var(--gsc-navy-dark) 50%,
+      var(--gsc-navy) 100%
+    );
+}
+
+.shape-fill::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  opacity: 0.2;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0 47%,
+      rgba(255, 255, 255, 0.08) 47% 47.4%,
+      transparent 47.4% 100%
+    ),
+    radial-gradient(
+      circle at 66% 68%,
+      rgba(255, 255, 255, 0.09),
+      transparent 4px
+    );
+  background-size:
+    auto,
+    44px 44px;
+}
+
+/* -------------------------------------------------------
+   Text content
+------------------------------------------------------- */
+
+.overlay-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: min(71vw, 440px);
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 0 54px;
+  margin-left: clamp(22px, 6vw, 40px);
+}
+
+.overlay-eyebrow {
+  margin: 0 0 20px;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(15px, 4.2vw, 19px);
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.overlay-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(49px, 14.1vw, 76px);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.015em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.overlay-heading span {
+  display: block;
+}
+
+.overlay-heading-accent {
+  color: var(--gsc-red);
+}
+
+.heading-divider {
+  width: 66px;
+  height: 4px;
+  margin: 27px 0 22px;
+  border-radius: 999px;
+  background: var(--gsc-red);
+}
+
+.overlay-description {
+  max-width: 390px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(16px, 4.5vw, 21px);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+/* -------------------------------------------------------
+   Buttons
+------------------------------------------------------- */
+
+.overlay-buttons {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  margin-top: 36px;
+}
+
+.overlay-button {
+  display: flex;
+  min-height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(20px, 5.6vw, 27px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.overlay-button--primary {
+  color: var(--gsc-white);
+  border: 2px solid var(--gsc-red);
+  background:
+    linear-gradient(
+      100deg,
+      var(--gsc-red-dark),
+      var(--gsc-red)
+    );
+  box-shadow: 0 12px 25px rgba(116, 0, 23, 0.28);
+}
+
+.overlay-button--secondary {
+  color: var(--gsc-white);
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  background: rgba(2, 20, 52, 0.34);
+  backdrop-filter: blur(7px);
+}
+
+.button-content {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 13px;
+}
+
+.button-content span {
+  white-space: nowrap;
+}
+
+.button-icon {
+  width: 27px;
+  height: 27px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.button-arrow {
+  width: 25px;
+  height: 25px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transition: transform 180ms ease;
+}
+
+.overlay-button:hover,
+.overlay-button:focus-visible {
+  outline: none;
+  transform: translateY(-3px);
+}
+
+.overlay-button:hover .button-arrow,
+.overlay-button:focus-visible .button-arrow {
+  transform: translateX(4px);
+}
+
+.overlay-button--primary:hover,
+.overlay-button--primary:focus-visible {
+  background:
+    linear-gradient(
+      100deg,
+      #a1102b,
+      #ff3a54
+    );
+  box-shadow: 0 17px 30px rgba(116, 0, 23, 0.36);
+}
+
+.overlay-button--secondary:hover,
+.overlay-button--secondary:focus-visible {
+  border-color: var(--gsc-red);
+  background: rgba(9, 49, 111, 0.7);
+}
+
+.overlay-button:active {
+  transform: translateY(0) scale(0.985);
+}
+
+/* -------------------------------------------------------
+   Shorter mobile screens
+------------------------------------------------------- */
+
+@media (max-height: 720px) and (max-width: 767px) {
+  .mobile-landing-overlay,
+  .shape-border {
+    min-height: 620px;
+  }
+
+  .overlay-content {
+    padding-top: 45px;
+    padding-bottom: 38px;
+  }
+
+  .overlay-eyebrow {
+    margin-bottom: 15px;
+  }
+
+  .overlay-heading {
+    font-size: clamp(45px, 13.5vw, 66px);
+  }
+
+  .heading-divider {
+    margin-top: 21px;
+    margin-bottom: 17px;
+  }
+
+  .overlay-buttons {
+    margin-top: 25px;
+  }
+
+  .overlay-button {
+    min-height: 62px;
+  }
+}
+
+/* -------------------------------------------------------
+   Small phones
+------------------------------------------------------- */
+
+@media (max-width: 370px) {
+  .overlay-content {
+    width: 72vw;
+    margin-left: 18px;
+  }
+
+  .overlay-heading {
+    font-size: 46px;
+  }
+
+  .overlay-description {
+    font-size: 15px;
+  }
+
+  .overlay-button {
+    min-height: 60px;
+    padding-inline: 15px;
+    font-size: 19px;
+  }
+
+  .button-content {
+    gap: 9px;
+  }
+
+  .button-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .button-arrow {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+/* -------------------------------------------------------
+   Hide everything at tablet and desktop widths
+------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  html,
+  body,
+  #root {
+    width: 0 !important;
+    height: 0 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .mobile-landing-overlay {
+    display: none !important;
+  }
+}
+
+/* -------------------------------------------------------
+   Accessibility
+------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
