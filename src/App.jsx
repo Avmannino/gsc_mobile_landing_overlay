@@ -62,7 +62,7 @@ function App() {
             id="gsc-shape-clip"
             clipPathUnits="objectBoundingBox"
           >
-            <path d="M0,0 C0.02,0.35 0.68,0.65 0.80,1 L0,1 Z" />
+            <path d="M0,0 C0.02,0.35 0.78,0.60 0.80,1 L0,1 Z" />
           </clipPath>
         </defs>
       </svg>
@@ -72,19 +72,19 @@ function App() {
       </div>
 
       <section className="overlay-content">
-        <img
-          className="overlay-logo"
-          src={`${import.meta.env.BASE_URL}gsc-logo.png`}
-          alt="Greenwich Skating Club"
-        />
+        <div className="overlay-logo-row">
+          <img
+            className="overlay-logo"
+            src={`${import.meta.env.BASE_URL}gsc-logo.png`}
+            alt="Greenwich Skating Club"
+          />
 
-        <h1 className="overlay-heading">
-          <span>Where Champions</span>
-
-          <span className="overlay-heading-accent">
-            Take the Ice.
-          </span>
-        </h1>
+          <img
+            className="overlay-logo-text"
+            src={`${import.meta.env.BASE_URL}gsc-text-logo.png`}
+            alt="Greenwich Skating Club"
+          />
+        </div>
 
         <div className="heading-divider" />
 
