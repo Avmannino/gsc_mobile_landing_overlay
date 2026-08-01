@@ -143,7 +143,22 @@ function DiagonalPanel() {
             floodOpacity="0.24"
           />
         </filter>
+
+        <clipPath id="panel-clip">
+          <path d={PANEL_PATH} />
+        </clipPath>
       </defs>
+
+      <image
+        href={`${import.meta.env.BASE_URL}faceoff-circle.png`}
+        x="250"
+        y="169"
+        width="1000"
+        height="1000"
+        preserveAspectRatio="xMidYMid slice"
+        clipPath="url(#panel-clip)"
+        opacity="0.22"
+      />
 
       <g opacity="0.8">
         <path
