@@ -9,23 +9,23 @@ const LOGIN_URL =
 /*
   Diagonal overlay proportions based on the reference design.
 
-  The blue panel begins approximately 43.5% down the left side
-  and reaches approximately 61.5% down the right side.
+  The blue panel begins approximately 52% down the left side
+  and reaches approximately 61% down the right side.
 
   Because the SVG uses preserveAspectRatio="none", those
   proportions remain consistent across mobile screen sizes.
 */
 const PANEL_PATH = `
-  M 0 435
-  L 1000 615
+  M 0 520
+  L 1000 610
   V 1000
   H 0
   Z
 `;
 
 const PANEL_EDGE_PATH = `
-  M 0 435
-  L 1000 615
+  M 0 520
+  L 1000 610
 `;
 
 function ArrowIcon() {
