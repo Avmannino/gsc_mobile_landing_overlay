@@ -193,6 +193,7 @@ svg {
   gap: 14px;
   width: 100%;
   margin-top: 36px;
+  transform: translateY(-26px);
 }
 
 .overlay-button {
@@ -328,10 +329,6 @@ svg {
   .heading-divider {
     margin-top: 21px;
     margin-bottom: 17px;
-  }
-
-  .overlay-buttons {
-    margin-top: 25px;
   }
 
   .overlay-button {
