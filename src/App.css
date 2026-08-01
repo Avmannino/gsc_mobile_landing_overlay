@@ -192,12 +192,12 @@ img {
 ------------------------------------------------------- */
 
 .heading-divider {
-  width: clamp(64px, 17vw, 77px);
+  width: clamp(54px, 14vw, 65px);
   height: 3px;
 
   flex: 0 0 auto;
 
-  margin: clamp(9px, 2.5dvh, 15px) 0;
+  margin: clamp(5px, 2.5dvh, 11px) 0;
 
   border-radius: 999px;
 
@@ -209,7 +209,7 @@ img {
 ------------------------------------------------------- */
 
 .overlay-est-logo {
-  width: clamp(64px, 17vw, 77px);
+  width: clamp(54px, 14vw, 65px);
   height: auto;
   max-width: none;
 
@@ -509,8 +509,8 @@ img {
   }
 
   .heading-divider {
-    margin-top: 11px;
-    margin-bottom: 11px;
+    margin-top: 7px;
+    margin-bottom: 7px;
   }
 
   .overlay-button {
@@ -550,8 +550,8 @@ img {
   }
 
   .heading-divider {
-    margin-top: 14px;
-    margin-bottom: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .overlay-button {
@@ -593,8 +593,8 @@ img {
   }
 
   .heading-divider {
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 
   .overlay-est-logo {
@@ -647,8 +647,8 @@ img {
   }
 
   .heading-divider {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 
   .overlay-est-logo {
@@ -694,8 +694,8 @@ img {
   }
 
   .heading-divider {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 1px;
+    margin-bottom: 1px;
   }
 
   .overlay-est-logo {
