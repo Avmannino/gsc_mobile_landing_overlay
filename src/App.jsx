@@ -6,6 +6,28 @@ const PROGRAMS_URL =
 const LOGIN_URL =
   "https://www.greenwichskatingclub.org/login";
 
+/*
+  Diagonal overlay proportions based on the reference design.
+
+  The blue panel begins approximately 43.5% down the left side
+  and reaches approximately 61.5% down the right side.
+
+  Because the SVG uses preserveAspectRatio="none", those
+  proportions remain consistent across mobile screen sizes.
+*/
+const PANEL_PATH = `
+  M 0 435
+  L 1000 615
+  V 1000
+  H 0
+  Z
+`;
+
+const PANEL_EDGE_PATH = `
+  M 0 435
+  L 1000 615
+`;
+
 function ArrowIcon() {
   return (
     <svg
@@ -26,10 +48,18 @@ function CalendarIcon() {
       viewBox="0 0 24 24"
       aria-hidden="true"
     >
-      <rect x="3.5" y="5.5" width="17" height="15" rx="2" />
+      <rect
+        x="3.5"
+        y="5.5"
+        width="17"
+        height="15"
+        rx="2"
+      />
+
       <path d="M7.5 3.5v4" />
       <path d="M16.5 3.5v4" />
       <path d="M3.5 9.5h17" />
+
       <path d="M8 13h2" />
       <path d="M14 13h2" />
       <path d="M8 17h2" />
@@ -46,7 +76,137 @@ function MemberIcon() {
       aria-hidden="true"
     >
       <circle cx="12" cy="8" r="4" />
+
       <path d="M4.5 21c.5-5 3.1-7.5 7.5-7.5s7 2.5 7.5 7.5" />
+    </svg>
+  );
+}
+
+function DiagonalPanel() {
+  return (
+    <svg
+      className="overlay-panel"
+      viewBox="0 0 1000 1000"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <linearGradient
+          id="panel-gradient"
+          gradientUnits="userSpaceOnUse"
+          x1="0"
+          y1="1000"
+          x2="1000"
+          y2="250"
+        >
+          <stop
+            offset="0%"
+            stopColor="#0c2763"
+          />
+
+          <stop
+            offset="48%"
+            stopColor="#12357e"
+          />
+
+          <stop
+            offset="100%"
+            stopColor="#244b9d"
+          />
+        </linearGradient>
+
+        <radialGradient
+          id="panel-highlight"
+          gradientUnits="userSpaceOnUse"
+          cx="720"
+          cy="560"
+          r="720"
+        >
+          <stop
+            offset="0%"
+            stopColor="#4169b6"
+            stopOpacity="0.22"
+          />
+
+          <stop
+            offset="52%"
+            stopColor="#2c54a0"
+            stopOpacity="0.08"
+          />
+
+          <stop
+            offset="100%"
+            stopColor="#102e74"
+            stopOpacity="0"
+          />
+        </radialGradient>
+
+        <linearGradient
+          id="panel-sheen"
+          gradientUnits="userSpaceOnUse"
+          x1="0"
+          y1="300"
+          x2="1000"
+          y2="1000"
+        >
+          <stop
+            offset="0%"
+            stopColor="#ffffff"
+            stopOpacity="0.035"
+          />
+
+          <stop
+            offset="48%"
+            stopColor="#ffffff"
+            stopOpacity="0"
+          />
+
+          <stop
+            offset="100%"
+            stopColor="#ffffff"
+            stopOpacity="0.025"
+          />
+        </linearGradient>
+
+        <filter
+          id="panel-shadow"
+          x="-15%"
+          y="-15%"
+          width="130%"
+          height="140%"
+        >
+          <feDropShadow
+            dx="0"
+            dy="8"
+            stdDeviation="10"
+            floodColor="#00132f"
+            floodOpacity="0.24"
+          />
+        </filter>
+      </defs>
+
+      <path
+        d={PANEL_PATH}
+        fill="url(#panel-gradient)"
+        filter="url(#panel-shadow)"
+      />
+
+      <path
+        d={PANEL_PATH}
+        fill="url(#panel-highlight)"
+      />
+
+      <path
+        d={PANEL_PATH}
+        fill="url(#panel-sheen)"
+      />
+
+      <path
+        className="panel-red-edge"
+        d={PANEL_EDGE_PATH}
+        vectorEffect="non-scaling-stroke"
+      />
     </svg>
   );
 }
@@ -57,29 +217,10 @@ function App() {
       className="mobile-landing-overlay"
       aria-label="Greenwich Skating Club mobile landing links"
     >
-      <svg
-        className="shape-definition"
-        width="0"
-        height="0"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <defs>
-          <clipPath
-            id="gsc-shape-clip"
-            clipPathUnits="objectBoundingBox"
-          >
-            <path d="M0,0 C0.02,0.35 0.78,0.60 0.80,1 L0,1 Z" />
-          </clipPath>
-        </defs>
-      </svg>
-
-      <div className="shape-border" aria-hidden="true">
-        <div className="shape-fill" />
-      </div>
+      <DiagonalPanel />
 
       <section className="overlay-content">
-        <div className="overlay-logo-row">
+        <div className="overlay-logo-lockup">
           <img
             className="overlay-logo"
             src={`${import.meta.env.BASE_URL}gsc-logo.png`}
@@ -94,7 +235,10 @@ function App() {
           />
         </div>
 
-        <div className="heading-divider" aria-hidden="true" />
+        <div
+          className="heading-divider"
+          aria-hidden="true"
+        />
 
         <div className="overlay-buttons">
           <a
@@ -104,6 +248,7 @@ function App() {
           >
             <span className="button-content">
               <CalendarIcon />
+
               <span>View Programs</span>
             </span>
 
@@ -117,6 +262,7 @@ function App() {
           >
             <span className="button-content">
               <MemberIcon />
+
               <span>Crossbar Login</span>
             </span>
 
