@@ -160,7 +160,7 @@ function DiagonalPanel() {
         opacity="0.22"
       />
 
-      <g opacity="0.8">
+      <g opacity="0.9">
         <path
           d={PANEL_PATH}
           fill="url(#panel-gradient)"
