@@ -5,6 +5,7 @@
 
   --gsc-red: #ed1b3a;
   --gsc-red-dark: #c5102e;
+  --gsc-red-light: #f53350;
 
   --gsc-white: #ffffff;
 
@@ -111,9 +112,6 @@ img {
 
 /* -------------------------------------------------------
    Content placement
-
-   The content sits in the left portion of the diagonal
-   panel, similar to the supplied concept image.
 ------------------------------------------------------- */
 
 .overlay-content {
@@ -134,11 +132,11 @@ img {
 
   overflow: visible;
 
-  transform: translateY(145px);
+  transform: translateY(135px);
 }
 
 /* -------------------------------------------------------
-   Stacked logo lockup
+   Side-by-side logo lockup
 ------------------------------------------------------- */
 
 .overlay-logo-lockup {
@@ -149,7 +147,7 @@ img {
   flex-direction: row;
   align-items: center;
 
-  gap: clamp(5px, 1.6dvh, 9px);
+  gap: clamp(8px, 1.6dvh, 12px);
 
   margin: 0 0 0 -15px;
   padding: 0;
@@ -199,7 +197,7 @@ img {
 
   flex: 0 0 auto;
 
-  margin: clamp(14px, 2.5dvh, 20px) 0;
+  margin: clamp(9px, 2.5dvh, 15px) 0;
 
   border-radius: 999px;
 
@@ -215,7 +213,7 @@ img {
   height: auto;
   max-width: none;
 
-  margin: 0 0 clamp(19px, 2.5dvh, 25px);
+  margin: 0 0 clamp(27px, 2.5dvh, 33px);
 
   object-fit: contain;
 
@@ -225,7 +223,7 @@ img {
 }
 
 /* -------------------------------------------------------
-   Buttons
+   Button group
 ------------------------------------------------------- */
 
 .overlay-buttons {
@@ -234,114 +232,196 @@ img {
 
   justify-items: stretch;
 
-  gap: clamp(14px, 1.3dvh, 17px);
+  gap: clamp(10px, 1.3dvh, 13px);
 
   margin: 0;
   padding: 0;
 }
 
+/* -------------------------------------------------------
+   Button base
+
+   The icon tiles have been removed. Each button now uses:
+
+   - A clearly aligned text label
+   - A restrained arrow control
+   - More open horizontal spacing
+------------------------------------------------------- */
+
 .overlay-button {
+  position: relative;
+  isolation: isolate;
+
   display: flex;
   width: 100%;
 
-  min-height: clamp(47px, 5.4dvh, 52px);
+  min-height: clamp(48px, 5.4dvh, 53px);
 
   align-items: center;
   justify-content: center;
 
-  gap: 10px;
+  gap: 11px;
 
   padding:
-    0
-    clamp(10px, 2.8vw, 14px);
+    5px
+    7px
+    5px
+    clamp(15px, 3.8vw, 18px);
 
-  border-radius: 7px;
+  overflow: hidden;
+
+  border-radius: 9px;
 
   font-family:
+    "Microgramma",
     "Barlow Condensed",
     "Arial Narrow",
     Arial,
     sans-serif;
 
-  font-size: clamp(13.5px, 3.6vw, 16px);
+  font-size: clamp(8.75px, 2.2vw, 10.75px);
   font-weight: 700;
 
-  letter-spacing: 0.025em;
+  letter-spacing: 0.06em;
   line-height: 1;
 
   text-transform: uppercase;
 
+  transform: translateZ(0);
+
   transition:
     transform 180ms ease,
-    background-color 180ms ease,
     border-color 180ms ease,
+    background 180ms ease,
     box-shadow 180ms ease;
 }
+
+/*
+  Adds a very restrained highlight along the upper portion
+  of each button without making it look glossy.
+*/
+
+.overlay-button::before {
+  position: absolute;
+  z-index: -1;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 48%;
+
+  content: "";
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+
+  pointer-events: none;
+}
+
+.button-label {
+  display: block;
+  min-width: 0;
+
+  overflow: visible;
+
+  white-space: nowrap;
+
+  text-align: left;
+}
+
+.button-arrow-shell {
+  display: grid;
+
+  width: clamp(29px, 7.3vw, 32px);
+  height: clamp(29px, 7.3vw, 32px);
+
+  flex: 0 0 auto;
+
+  place-items: center;
+
+  border-radius: 999px;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+/* -------------------------------------------------------
+   Primary button
+------------------------------------------------------- */
 
 .overlay-button--primary {
   color: var(--gsc-white);
 
-  border: 2px solid var(--gsc-red);
+  border: 1px solid rgba(255, 119, 138, 0.72);
 
   background:
     linear-gradient(
-      100deg,
+      105deg,
       var(--gsc-red-dark) 0%,
-      var(--gsc-red) 100%
+      var(--gsc-red) 58%,
+      var(--gsc-red-light) 100%
     );
 
   box-shadow:
-    0 8px 18px rgba(91, 0, 20, 0.25);
+    0 9px 21px rgba(78, 0, 19, 0.27),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 rgba(104, 0, 23, 0.3);
 }
+
+.overlay-button--primary .button-arrow-shell {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  background: rgba(108, 0, 23, 0.2);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* -------------------------------------------------------
+   Secondary button
+------------------------------------------------------- */
 
 .overlay-button--secondary {
   color: var(--gsc-white);
 
-  border: 2px solid rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(216, 229, 255, 0.76);
 
-  background: rgba(4, 27, 73, 0.3);
+  background:
+    linear-gradient(
+      110deg,
+      rgba(4, 25, 66, 0.74) 0%,
+      rgba(15, 53, 116, 0.69) 100%
+    );
 
   box-shadow:
-    inset 0 0 0 1px rgba(27, 77, 161, 0.12);
+    0 7px 18px rgba(0, 10, 35, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(66, 108, 180, 0.1);
 
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-.button-content {
-  display: flex;
-  min-width: 0;
+.overlay-button--secondary .button-arrow-shell {
+  border: 1px solid rgba(215, 227, 255, 0.19);
 
-  align-items: center;
-
-  gap: clamp(6px, 1.8vw, 8px);
+  background: rgba(3, 21, 57, 0.29);
 }
 
-.button-content span {
-  overflow: visible;
-
-  white-space: nowrap;
-}
-
-.button-icon {
-  width: clamp(17px, 4.4vw, 20px);
-  height: clamp(17px, 4.4vw, 20px);
-
-  flex: 0 0 auto;
-
-  fill: none;
-  stroke: currentColor;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-}
+/* -------------------------------------------------------
+   Arrow icon
+------------------------------------------------------- */
 
 .button-arrow {
-  width: clamp(19px, 5vw, 23px);
-  height: clamp(19px, 5vw, 23px);
-
-  flex: 0 0 auto;
+  width: clamp(16px, 4vw, 18px);
+  height: clamp(16px, 4vw, 18px);
 
   fill: none;
   stroke: currentColor;
@@ -364,29 +444,47 @@ img {
   transform: translateY(-2px);
 }
 
-.overlay-button:hover .button-arrow,
-.overlay-button:focus-visible .button-arrow {
-  transform: translateX(3px);
-}
-
 .overlay-button--primary:hover,
 .overlay-button--primary:focus-visible {
+  border-color: rgba(255, 170, 181, 0.92);
+
   background:
     linear-gradient(
-      100deg,
-      #b10d2d 0%,
-      #f52a47 100%
+      105deg,
+      #b20d2c 0%,
+      #ef1d3e 57%,
+      #ff3a56 100%
     );
 
   box-shadow:
-    0 12px 23px rgba(91, 0, 20, 0.32);
+    0 13px 26px rgba(78, 0, 19, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.19);
 }
 
 .overlay-button--secondary:hover,
 .overlay-button--secondary:focus-visible {
-  border-color: var(--gsc-red);
+  border-color: rgba(255, 255, 255, 0.95);
 
-  background: rgba(21, 59, 128, 0.55);
+  background:
+    linear-gradient(
+      110deg,
+      rgba(7, 34, 86, 0.88) 0%,
+      rgba(25, 68, 144, 0.82) 100%
+    );
+
+  box-shadow:
+    0 11px 23px rgba(0, 10, 35, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.11);
+}
+
+.overlay-button:hover .button-arrow-shell,
+.overlay-button:focus-visible .button-arrow-shell {
+  transform: translateX(2px);
+}
+
+.overlay-button:hover .button-arrow,
+.overlay-button:focus-visible .button-arrow {
+  transform: translateX(1px);
 }
 
 .overlay-button:active {
@@ -411,26 +509,26 @@ img {
   }
 
   .heading-divider {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 11px;
+    margin-bottom: 11px;
   }
 
   .overlay-button {
-    min-height: 49px;
+    min-height: 50px;
 
-    padding-inline: 11px;
+    padding-left: 16px;
 
-    font-size: 14.5px;
+    font-size: 9.25px;
   }
 
-  .button-icon {
-    width: 18px;
-    height: 18px;
+  .button-arrow-shell {
+    width: 30px;
+    height: 30px;
   }
 
   .button-arrow {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -452,26 +550,26 @@ img {
   }
 
   .heading-divider {
-    margin-top: 19px;
-    margin-bottom: 19px;
+    margin-top: 14px;
+    margin-bottom: 14px;
   }
 
   .overlay-button {
-    min-height: 52px;
+    min-height: 53px;
 
-    padding-inline: 13px;
+    padding-left: 18px;
 
-    font-size: 16px;
+    font-size: 10.25px;
   }
 
-  .button-icon {
-    width: 20px;
-    height: 20px;
+  .button-arrow-shell {
+    width: 32px;
+    height: 32px;
   }
 
   .button-arrow {
-    width: 23px;
-    height: 23px;
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -487,7 +585,7 @@ img {
   }
 
   .overlay-logo-lockup {
-    gap: 7px;
+    gap: 10px;
   }
 
   .overlay-logo {
@@ -495,28 +593,38 @@ img {
   }
 
   .heading-divider {
-    margin-top: 11px;
-    margin-bottom: 11px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  .overlay-est-logo {
+    margin-bottom: 24px;
   }
 
   .overlay-buttons {
-    gap: 13px;
+    gap: 9px;
   }
 
   .overlay-button {
-    min-height: 43px;
+    min-height: 45px;
 
-    font-size: 13px;
+    padding:
+      4px
+      5px
+      4px
+      14px;
+
+    font-size: 7.25px;
   }
 
-  .button-icon {
-    width: 16px;
-    height: 16px;
+  .button-arrow-shell {
+    width: 27px;
+    height: 27px;
   }
 
   .button-arrow {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -539,30 +647,34 @@ img {
   }
 
   .heading-divider {
-    margin-top: 13px;
-    margin-bottom: 13px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .overlay-est-logo {
+    margin-bottom: 25px;
   }
 
   .overlay-button {
-    min-height: 45px;
+    min-height: 47px;
 
-    padding-inline: 9px;
+    padding:
+      4px
+      5px
+      4px
+      14px;
 
-    font-size: 13px;
+    font-size: 7.5px;
   }
 
-  .button-content {
-    gap: 5px;
-  }
-
-  .button-icon {
-    width: 16px;
-    height: 16px;
+  .button-arrow-shell {
+    width: 28px;
+    height: 28px;
   }
 
   .button-arrow {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -582,26 +694,30 @@ img {
   }
 
   .heading-divider {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .overlay-est-logo {
+    margin-bottom: 22px;
   }
 
   .overlay-button {
-    min-height: 42px;
+    min-height: 44px;
 
-    padding-inline: 8px;
+    padding-left: 12px;
 
-    font-size: 12px;
+    font-size: 6.75px;
   }
 
-  .button-icon {
-    width: 15px;
-    height: 15px;
+  .button-arrow-shell {
+    width: 26px;
+    height: 26px;
   }
 
   .button-arrow {
-    width: 17px;
-    height: 17px;
+    width: 14px;
+    height: 14px;
   }
 }
 

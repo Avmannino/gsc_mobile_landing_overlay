@@ -41,47 +41,6 @@ function ArrowIcon() {
   );
 }
 
-function CalendarIcon() {
-  return (
-    <svg
-      className="button-icon"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <rect
-        x="3.5"
-        y="5.5"
-        width="17"
-        height="15"
-        rx="2"
-      />
-
-      <path d="M7.5 3.5v4" />
-      <path d="M16.5 3.5v4" />
-      <path d="M3.5 9.5h17" />
-
-      <path d="M8 13h2" />
-      <path d="M14 13h2" />
-      <path d="M8 17h2" />
-      <path d="M14 17h2" />
-    </svg>
-  );
-}
-
-function MemberIcon() {
-  return (
-    <svg
-      className="button-icon"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="8" r="4" />
-
-      <path d="M4.5 21c.5-5 3.1-7.5 7.5-7.5s7 2.5 7.5 7.5" />
-    </svg>
-  );
-}
-
 function DiagonalPanel() {
   return (
     <svg
@@ -186,21 +145,23 @@ function DiagonalPanel() {
         </filter>
       </defs>
 
-      <path
-        d={PANEL_PATH}
-        fill="url(#panel-gradient)"
-        filter="url(#panel-shadow)"
-      />
+      <g opacity="0.8">
+        <path
+          d={PANEL_PATH}
+          fill="url(#panel-gradient)"
+          filter="url(#panel-shadow)"
+        />
 
-      <path
-        d={PANEL_PATH}
-        fill="url(#panel-highlight)"
-      />
+        <path
+          d={PANEL_PATH}
+          fill="url(#panel-highlight)"
+        />
 
-      <path
-        d={PANEL_PATH}
-        fill="url(#panel-sheen)"
-      />
+        <path
+          d={PANEL_PATH}
+          fill="url(#panel-sheen)"
+        />
+      </g>
 
       <path
         className="panel-red-edge"
@@ -217,6 +178,16 @@ function App() {
       className="mobile-landing-overlay"
       aria-label="Greenwich Skating Club mobile landing links"
     >
+      <style>{`
+        @font-face {
+          font-family: "Microgramma";
+          src: url("${import.meta.env.BASE_URL}fonts/Microgramma Regular.ttf") format("truetype");
+          font-weight: 400;
+          font-style: normal;
+          font-display: swap;
+        }
+      `}</style>
+
       <DiagonalPanel />
 
       <section className="overlay-content">
@@ -253,13 +224,13 @@ function App() {
             href={PROGRAMS_URL}
             target="_top"
           >
-            <span className="button-content">
-              <CalendarIcon />
-
-              <span>View Programs</span>
+            <span className="button-label">
+              View Programs
             </span>
 
-            <ArrowIcon />
+            <span className="button-arrow-shell">
+              <ArrowIcon />
+            </span>
           </a>
 
           <a
@@ -267,13 +238,13 @@ function App() {
             href={LOGIN_URL}
             target="_top"
           >
-            <span className="button-content">
-              <MemberIcon />
-
-              <span>Crossbar Login</span>
+            <span className="button-label">
+              Crossbar Login
             </span>
 
-            <ArrowIcon />
+            <span className="button-arrow-shell">
+              <ArrowIcon />
+            </span>
           </a>
         </div>
       </section>
