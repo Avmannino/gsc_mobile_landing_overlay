@@ -240,6 +240,13 @@ function App() {
           aria-hidden="true"
         />
 
+        <img
+          className="overlay-est-logo"
+          src={`${import.meta.env.BASE_URL}est-logo.png`}
+          alt=""
+          aria-hidden="true"
+        />
+
         <div className="overlay-buttons">
           <a
             className="overlay-button overlay-button--primary"

@@ -151,7 +151,7 @@ img {
 
   gap: clamp(5px, 1.6dvh, 9px);
 
-  margin: 0;
+  margin: 0 0 0 -10px;
   padding: 0;
 
   overflow: visible;
@@ -160,7 +160,7 @@ img {
 }
 
 .overlay-logo {
-  width: clamp(83px, 23vw, 101px);
+  width: clamp(85px, 24vw, 104px);
   height: auto;
   max-width: none;
 
@@ -176,7 +176,7 @@ img {
 }
 
 .overlay-logo-text {
-  width: clamp(170px, 44vw, 200px);
+  width: clamp(152px, 39vw, 179px);
   height: auto;
   max-width: none;
 
@@ -194,19 +194,34 @@ img {
 ------------------------------------------------------- */
 
 .heading-divider {
-  width: clamp(38px, 21%, 47px);
+  width: clamp(64px, 17vw, 77px);
   height: 3px;
 
   flex: 0 0 auto;
 
-  margin:
-    clamp(18px, 2.4dvh, 23px)
-    0
-    clamp(19px, 2.5dvh, 25px);
+  margin: clamp(14px, 2.5dvh, 20px) 0;
 
   border-radius: 999px;
 
   background: var(--gsc-red);
+}
+
+/* -------------------------------------------------------
+   Established logo
+------------------------------------------------------- */
+
+.overlay-est-logo {
+  width: clamp(64px, 17vw, 77px);
+  height: auto;
+  max-width: none;
+
+  margin: 0 0 clamp(19px, 2.5dvh, 25px);
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.28))
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.14));
 }
 
 /* -------------------------------------------------------
@@ -219,7 +234,7 @@ img {
 
   justify-items: stretch;
 
-  gap: clamp(9px, 1.3dvh, 12px);
+  gap: clamp(14px, 1.3dvh, 17px);
 
   margin: 0;
   padding: 0;
@@ -232,9 +247,9 @@ img {
   min-height: clamp(47px, 5.4dvh, 52px);
 
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  gap: 7px;
+  gap: 10px;
 
   padding:
     0
@@ -323,8 +338,8 @@ img {
 }
 
 .button-arrow {
-  width: clamp(16px, 4.1vw, 19px);
-  height: clamp(16px, 4.1vw, 19px);
+  width: clamp(19px, 5vw, 23px);
+  height: clamp(19px, 5vw, 23px);
 
   flex: 0 0 auto;
 
@@ -392,14 +407,12 @@ img {
   }
 
   .overlay-logo {
-    width: 92px;
+    width: 93px;
   }
 
   .heading-divider {
-    width: 41px;
-
-    margin-top: 19px;
-    margin-bottom: 21px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 
   .overlay-button {
@@ -416,8 +429,8 @@ img {
   }
 
   .button-arrow {
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -435,14 +448,12 @@ img {
   }
 
   .overlay-logo {
-    width: 100px;
+    width: 103px;
   }
 
   .heading-divider {
-    width: 44px;
-
-    margin-top: 22px;
-    margin-bottom: 24px;
+    margin-top: 19px;
+    margin-bottom: 19px;
   }
 
   .overlay-button {
@@ -459,8 +470,8 @@ img {
   }
 
   .button-arrow {
-    width: 19px;
-    height: 19px;
+    width: 23px;
+    height: 23px;
   }
 }
 
@@ -480,16 +491,16 @@ img {
   }
 
   .overlay-logo {
-    width: clamp(74px, 22vw, 87px);
+    width: clamp(75px, 23vw, 89px);
   }
 
   .heading-divider {
-    margin-top: 14px;
-    margin-bottom: 16px;
+    margin-top: 11px;
+    margin-bottom: 11px;
   }
 
   .overlay-buttons {
-    gap: 8px;
+    gap: 13px;
   }
 
   .overlay-button {
@@ -504,8 +515,8 @@ img {
   }
 
   .button-arrow {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -522,16 +533,14 @@ img {
   }
 
   .overlay-logo {
-    width: 81px;
+    width: 83px;
 
     margin-left: -2px;
   }
 
   .heading-divider {
-    width: 37px;
-
-    margin-top: 16px;
-    margin-bottom: 18px;
+    margin-top: 13px;
+    margin-bottom: 13px;
   }
 
   .overlay-button {
@@ -552,8 +561,8 @@ img {
   }
 
   .button-arrow {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -569,12 +578,12 @@ img {
   }
 
   .overlay-logo {
-    width: 75px;
+    width: 76px;
   }
 
   .heading-divider {
-    margin-top: 13px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .overlay-button {
@@ -591,8 +600,8 @@ img {
   }
 
   .button-arrow {
-    width: 14px;
-    height: 14px;
+    width: 17px;
+    height: 17px;
   }
 }
 
