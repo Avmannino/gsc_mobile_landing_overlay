@@ -58,6 +58,7 @@ function App() {
       aria-label="Greenwich Skating Club mobile landing links"
     >
       <svg
+        className="shape-definition"
         width="0"
         height="0"
         aria-hidden="true"
@@ -82,17 +83,18 @@ function App() {
           <img
             className="overlay-logo"
             src={`${import.meta.env.BASE_URL}gsc-logo.png`}
-            alt="Greenwich Skating Club logo"
+            alt=""
+            aria-hidden="true"
           />
 
           <img
             className="overlay-logo-text"
             src={`${import.meta.env.BASE_URL}gsc-text-logo.png`}
-            alt="Greenwich Skating Club"
+            alt="Greenwich Skating Club, established 1954"
           />
         </div>
 
-        <div className="heading-divider" />
+        <div className="heading-divider" aria-hidden="true" />
 
         <div className="overlay-buttons">
           <a
