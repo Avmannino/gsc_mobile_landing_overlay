@@ -1,7 +1,7 @@
 :root {
-  --gsc-navy-darkest: rgba(22, 49, 118, 0.8);
-  --gsc-navy-dark: rgba(31, 65, 155, 0.8);
-  --gsc-navy: rgba(41, 78, 165, 0.8);
+  --gsc-navy-darkest: rgba(0, 28, 107, 0.9);
+  --gsc-navy-dark: rgba(6, 44, 144, 0.9);
+  --gsc-navy: rgba(16, 57, 154, 0.9);
   --gsc-blue: #174da7;
   --gsc-red: #e51837;
   --gsc-red-dark: #c21430;
@@ -93,7 +93,7 @@ svg {
   inset: 0;
   overflow: hidden;
   clip-path: url("#gsc-shape-clip");
-  background: var(--gsc-red);
+  background: rgba(229, 24, 55, 0.8);
   filter: drop-shadow(
     16px 14px 26px rgba(1, 15, 40, 0.2)
   );
@@ -121,28 +121,6 @@ svg {
       var(--gsc-navy-dark) 50%,
       var(--gsc-navy) 100%
     );
-}
-
-.shape-fill::before {
-  position: absolute;
-  inset: 0;
-  content: "";
-  opacity: 0.2;
-  background:
-    linear-gradient(
-      120deg,
-      transparent 0 47%,
-      rgba(255, 255, 255, 0.08) 47% 47.4%,
-      transparent 47.4% 100%
-    ),
-    radial-gradient(
-      circle at 66% 68%,
-      rgba(255, 255, 255, 0.09),
-      transparent 4px
-    );
-  background-size:
-    auto,
-    44px 44px;
 }
 
 /* -------------------------------------------------------
