@@ -151,7 +151,7 @@ img {
 
   gap: clamp(5px, 1.6dvh, 9px);
 
-  margin: 0 0 0 -10px;
+  margin: 0 0 0 -15px;
   padding: 0;
 
   overflow: visible;
@@ -160,7 +160,7 @@ img {
 }
 
 .overlay-logo {
-  width: clamp(85px, 24vw, 104px);
+  width: clamp(72px, 20vw, 88px);
   height: auto;
   max-width: none;
 
@@ -176,7 +176,7 @@ img {
 }
 
 .overlay-logo-text {
-  width: clamp(152px, 39vw, 179px);
+  width: clamp(167px, 43vw, 197px);
   height: auto;
   max-width: none;
 
@@ -407,7 +407,7 @@ img {
   }
 
   .overlay-logo {
-    width: 93px;
+    width: 79px;
   }
 
   .heading-divider {
@@ -448,7 +448,7 @@ img {
   }
 
   .overlay-logo {
-    width: 103px;
+    width: 88px;
   }
 
   .heading-divider {
@@ -491,7 +491,7 @@ img {
   }
 
   .overlay-logo {
-    width: clamp(75px, 23vw, 89px);
+    width: clamp(64px, 20vw, 76px);
   }
 
   .heading-divider {
@@ -533,7 +533,7 @@ img {
   }
 
   .overlay-logo {
-    width: 83px;
+    width: 71px;
 
     margin-left: -2px;
   }
@@ -578,7 +578,7 @@ img {
   }
 
   .overlay-logo {
-    width: 76px;
+    width: 65px;
   }
 
   .heading-divider {
