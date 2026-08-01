@@ -139,6 +139,7 @@ svg {
   justify-content: center;
   padding: 72px 0 54px;
   margin-left: clamp(22px, 6vw, 40px);
+  transform: translateY(100px);
 }
 
 .overlay-logo {
@@ -146,7 +147,7 @@ svg {
   align-self: flex-start;
   height: clamp(85px, 23.5vw, 119px);
   width: auto;
-  margin: 0 0 20px;
+  margin: 0 0 20px -10px;
 }
 
 .overlay-heading {
@@ -170,6 +171,8 @@ svg {
 
 .overlay-heading-accent {
   color: var(--gsc-red);
+  font-size: clamp(38px, 10.8vw, 58px);
+  white-space: nowrap;
 }
 
 .heading-divider {
@@ -178,15 +181,6 @@ svg {
   margin: 27px 0 22px;
   border-radius: 999px;
   background: var(--gsc-red);
-}
-
-.overlay-description {
-  max-width: 390px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: clamp(16px, 4.5vw, 21px);
-  font-weight: 500;
-  line-height: 1.55;
 }
 
 /* -------------------------------------------------------
@@ -357,10 +351,6 @@ svg {
 
   .overlay-heading {
     font-size: 46px;
-  }
-
-  .overlay-description {
-    font-size: 15px;
   }
 
   .overlay-button {

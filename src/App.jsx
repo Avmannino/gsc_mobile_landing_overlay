@@ -88,11 +88,6 @@ function App() {
 
         <div className="heading-divider" />
 
-        <p className="overlay-description">
-          Building confidence, character, and community—on and
-          off the ice.
-        </p>
-
         <div className="overlay-buttons">
           <a
             className="overlay-button overlay-button--primary"
