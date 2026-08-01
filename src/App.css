@@ -1,7 +1,7 @@
 :root {
-  --gsc-navy-darkest: rgba(0, 28, 107, 0.9);
-  --gsc-navy-dark: rgba(6, 44, 144, 0.9);
-  --gsc-navy: rgba(16, 57, 154, 0.9);
+  --gsc-navy-darkest: rgba(0, 2, 93, 0.8);
+  --gsc-navy-dark: rgba(0, 18, 130, 0.8);
+  --gsc-navy: rgba(10, 31, 140, 0.8);
   --gsc-blue: #174da7;
   --gsc-red: #e51837;
   --gsc-red-dark: #c21430;
