@@ -3,7 +3,8 @@ import "./App.css";
 const PROGRAMS_URL =
   "https://wingsarenact.wixstudio.com/gscnewsite/programs";
 
-const LOGIN_URL = "https://www.greenwichskatingclub.org/login";
+const LOGIN_URL =
+  "https://www.greenwichskatingclub.org/login";
 
 function ArrowIcon() {
   return (
@@ -56,7 +57,12 @@ function App() {
       className="mobile-landing-overlay"
       aria-label="Greenwich Skating Club mobile landing links"
     >
-      <svg width="0" height="0" aria-hidden="true" focusable="false">
+      <svg
+        width="0"
+        height="0"
+        aria-hidden="true"
+        focusable="false"
+      >
         <defs>
           <clipPath
             id="gsc-shape-clip"
@@ -76,7 +82,7 @@ function App() {
           <img
             className="overlay-logo"
             src={`${import.meta.env.BASE_URL}gsc-logo.png`}
-            alt="Greenwich Skating Club"
+            alt="Greenwich Skating Club logo"
           />
 
           <img

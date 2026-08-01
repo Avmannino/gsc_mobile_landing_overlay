@@ -14,7 +14,9 @@
   text-rendering: optimizeLegibility;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -24,6 +26,7 @@ body,
   width: 100%;
   height: 100%;
   min-width: 320px;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -56,26 +59,28 @@ svg {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 690px;
+  min-height: 100%;
   overflow: hidden;
   background: transparent;
   isolation: isolate;
 }
 
 /*
-  Both shapes use the same clip-path curve; the navy shape's
-  box is inset 5px on the right so a red sliver shows through.
+  Both shapes use the same clip-path curve.
+
+  The navy shape is inset slightly on the right so the red
+  shape remains visible as a thin accent.
 */
+
 .shape-border {
   position: absolute;
   z-index: 0;
   inset: 0;
-  min-height: 690px;
   overflow: hidden;
   clip-path: url(#gsc-shape-clip);
   background: var(--gsc-red);
   filter: drop-shadow(
-    18px 16px 30px rgba(1, 15, 40, 0.2)
+    16px 14px 26px rgba(1, 15, 40, 0.2)
   );
 }
 
@@ -126,48 +131,79 @@ svg {
 }
 
 /* -------------------------------------------------------
-   Text content
+   Logo and content positioning
 ------------------------------------------------------- */
 
 .overlay-content {
-  position: relative;
+  position: absolute;
   z-index: 2;
+
+  /*
+    This positions the content proportionally based on the
+    phone's viewport height.
+
+    iPhone 17 / 17 Pro:
+    402 × 874
+
+    iPhone 17 Pro Max:
+    440 × 956
+  */
+  top: clamp(462px, calc(43.5dvh + 120px), 538px);
+  left: clamp(18px, 5vw, 28px);
+
   display: flex;
-  width: min(71vw, 440px);
-  min-height: 100%;
+  width: min(76vw, 330px);
+  max-width: calc(100vw - 36px);
   flex-direction: column;
-  justify-content: center;
-  padding: 72px 0 54px;
-  margin-left: calc(clamp(22px, 6vw, 40px) - 10px);
-  transform: translateY(200px);
+  align-items: flex-start;
+
+  padding: 0 0 max(18px, env(safe-area-inset-bottom));
+  margin: 0;
 }
 
 .overlay-logo-row {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  align-self: flex-start;
-  gap: 14px;
-  margin: 0 0 20px;
+  gap: clamp(7px, 1.8vw, 10px);
+  width: 100%;
+  margin: 0 0 clamp(9px, 2.2vw, 13px) -5px;
 }
+
+/*
+  Circular GSC logo
+*/
 
 .overlay-logo {
   display: block;
-  height: clamp(99px, 27.54vw, 140px);
   width: auto;
-  margin-left: -10px;
+  height: clamp(44px, 11.76vw, 53px);
+  max-width: none;
+  margin-left: -6px;
+  object-fit: contain;
 }
+
+/*
+  Greenwich Skating Club text logo.
+
+  It is intentionally allowed to extend beyond the blue
+  clipped shape.
+*/
 
 .overlay-logo-text {
   display: block;
-  height: clamp(100px, 27.24vw, 138px);
   width: auto;
+  height: clamp(74px, 19.8vw, 89px);
+  max-width: none;
+  object-fit: contain;
 }
 
 .heading-divider {
-  width: 66px;
-  height: 4px;
-  margin: 2px 0 22px;
+  width: clamp(48px, 14vw, 62px);
+  height: 3px;
+  flex: 0 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
   border-radius: 999px;
   background: var(--gsc-red);
 }
@@ -179,27 +215,30 @@ svg {
 .overlay-buttons {
   display: grid;
   justify-items: start;
-  gap: 14px;
+  gap: clamp(9px, 2.5vw, 12px);
   width: 100%;
-  margin-top: 36px;
-  transform: translateY(-26px);
+  margin: 0;
+  transform: none;
 }
 
 .overlay-button {
   display: flex;
-  min-height: 56px;
+  width: clamp(161px, 47vw, 193px);
+  min-height: clamp(47px, 12.3vw, 52px);
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  width: clamp(185px, 52vw, 245px);
-  padding: 0 16px;
-  border-radius: 8px;
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(15px, 4.4vw, 20px);
+  gap: 10px;
+
+  padding: 0 clamp(12px, 3.6vw, 16px);
+  border-radius: 7px;
+
+  font-family: "Barlow Condensed", Arial, sans-serif;
+  font-size: clamp(14px, 4vw, 17px);
   font-weight: 700;
   letter-spacing: 0.03em;
   line-height: 1;
   text-transform: uppercase;
+
   transition:
     transform 180ms ease,
     background 180ms ease,
@@ -216,7 +255,7 @@ svg {
       var(--gsc-red-dark),
       var(--gsc-red)
     );
-  box-shadow: 0 12px 25px rgba(116, 0, 23, 0.28);
+  box-shadow: 0 10px 22px rgba(116, 0, 23, 0.27);
 }
 
 .overlay-button--secondary {
@@ -224,13 +263,14 @@ svg {
   border: 2px solid rgba(255, 255, 255, 0.88);
   background: rgba(2, 20, 52, 0.34);
   backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
 
 .button-content {
   display: flex;
   min-width: 0;
   align-items: center;
-  gap: 10px;
+  gap: clamp(7px, 2vw, 9px);
 }
 
 .button-content span {
@@ -238,8 +278,8 @@ svg {
 }
 
 .button-icon {
-  width: 22px;
-  height: 22px;
+  width: clamp(18px, 4.8vw, 21px);
+  height: clamp(18px, 4.8vw, 21px);
   flex: 0 0 auto;
   fill: none;
   stroke: currentColor;
@@ -249,8 +289,8 @@ svg {
 }
 
 .button-arrow {
-  width: 20px;
-  height: 20px;
+  width: clamp(17px, 4.5vw, 20px);
+  height: clamp(17px, 4.5vw, 20px);
   flex: 0 0 auto;
   fill: none;
   stroke: currentColor;
@@ -263,12 +303,12 @@ svg {
 .overlay-button:hover,
 .overlay-button:focus-visible {
   outline: none;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .overlay-button:hover .button-arrow,
 .overlay-button:focus-visible .button-arrow {
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
 .overlay-button--primary:hover,
@@ -279,7 +319,7 @@ svg {
       #a1102b,
       #ff3a54
     );
-  box-shadow: 0 17px 30px rgba(116, 0, 23, 0.36);
+  box-shadow: 0 14px 27px rgba(116, 0, 23, 0.34);
 }
 
 .overlay-button--secondary:hover,
@@ -293,31 +333,104 @@ svg {
 }
 
 /* -------------------------------------------------------
-   Shorter mobile screens
+   iPhone 17 and iPhone 17 Pro
+   CSS viewport: 402 × 874
 ------------------------------------------------------- */
 
-@media (max-height: 720px) and (max-width: 767px) {
-  .mobile-landing-overlay,
-  .shape-border {
-    min-height: 620px;
-  }
-
+@media (min-width: 390px) and (max-width: 419px) {
   .overlay-content {
-    padding-top: 45px;
-    padding-bottom: 38px;
+    top: clamp(470px, calc(43.5dvh + 120px), 502px);
+    left: 20px;
+    width: 76vw;
   }
 
-  .overlay-logo-row {
-    margin-bottom: 15px;
+  .overlay-logo {
+    height: 47px;
   }
 
-  .heading-divider {
-    margin-top: 21px;
-    margin-bottom: 17px;
+  .overlay-logo-text {
+    height: 79px;
   }
 
   .overlay-button {
-    min-height: 50px;
+    width: 186px;
+    min-height: 49px;
+    font-size: 16px;
+  }
+}
+
+/* -------------------------------------------------------
+   iPhone 17 Pro Max
+   CSS viewport: 440 × 956
+------------------------------------------------------- */
+
+@media (min-width: 420px) and (max-width: 480px) {
+  .overlay-content {
+    top: clamp(508px, calc(43.5dvh + 120px), 538px);
+    left: 23px;
+    width: 75vw;
+  }
+
+  .overlay-logo {
+    height: 51px;
+  }
+
+  .overlay-logo-text {
+    height: 87px;
+  }
+
+  .overlay-logo-row {
+    gap: 9px;
+    margin-bottom: 12px;
+  }
+
+  .heading-divider {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .overlay-button {
+    width: 193px;
+    min-height: 52px;
+    font-size: 17px;
+  }
+}
+
+/* -------------------------------------------------------
+   Shorter mobile screens
+------------------------------------------------------- */
+
+@media (max-height: 760px) and (max-width: 767px) {
+  .overlay-content {
+    top: clamp(405px, calc(40dvh + 120px), 440px);
+  }
+
+  .overlay-logo {
+    height: clamp(38px, 10.64vw, 44px);
+  }
+
+  .overlay-logo-text {
+    height: clamp(64px, 17.5vw, 72px);
+  }
+
+  .overlay-logo-row {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .heading-divider {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .overlay-buttons {
+    gap: 8px;
+  }
+
+  .overlay-button {
+    width: clamp(155px, 46vw, 180px);
+    min-height: 45px;
+    font-size: 14px;
   }
 }
 
@@ -327,13 +440,25 @@ svg {
 
 @media (max-width: 370px) {
   .overlay-content {
-    width: 72vw;
-    margin-left: 18px;
+    top: clamp(430px, calc(42dvh + 120px), 470px);
+    left: 17px;
+    width: 76vw;
+    max-width: calc(100vw - 28px);
+  }
+
+  .overlay-logo {
+    height: 41px;
+    margin-left: -4px;
+  }
+
+  .overlay-logo-text {
+    height: 68px;
   }
 
   .overlay-button {
-    min-height: 48px;
-    padding-inline: 12px;
+    width: 167px;
+    min-height: 46px;
+    padding-inline: 11px;
     font-size: 14px;
   }
 
@@ -347,8 +472,8 @@ svg {
   }
 
   .button-arrow {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
   }
 }
 
@@ -363,6 +488,7 @@ svg {
     width: 0 !important;
     height: 0 !important;
     min-width: 0 !important;
+    min-height: 0 !important;
     overflow: hidden !important;
   }
 
