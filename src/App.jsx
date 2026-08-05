@@ -10,22 +10,22 @@ const LOGIN_URL =
   Diagonal overlay proportions based on the reference design.
 
   The blue panel is a flat horizontal edge at approximately
-  56.5% down the viewport.
+  69% down the viewport.
 
   Because the SVG uses preserveAspectRatio="none", those
   proportions remain consistent across mobile screen sizes.
 */
 const PANEL_PATH = `
-  M 0 565
-  L 1000 565
+  M 0 690
+  L 1000 690
   V 1000
   H 0
   Z
 `;
 
 const PANEL_EDGE_PATH = `
-  M 0 565
-  L 1000 565
+  M 0 690
+  L 1000 690
 `;
 
 function ArrowIcon() {
