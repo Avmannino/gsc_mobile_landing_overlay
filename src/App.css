@@ -122,7 +122,7 @@ img {
   left: clamp(28px, 9vw, 42px);
 
   display: flex;
-  width: clamp(170px, 44vw, 200px);
+  width: clamp(353px, 88vw, 413px);
 
   flex-direction: column;
   align-items: flex-start;
@@ -159,7 +159,7 @@ img {
 
 .overlay-logo {
   position: relative;
-  top: -5px;
+  top: 0px;
 
   width: clamp(72px, 20vw, 88px);
   height: auto;
@@ -215,11 +215,13 @@ img {
 ------------------------------------------------------- */
 
 .overlay-est-logo {
+  visibility: hidden;
+
   width: clamp(54px, 14vw, 65px);
   height: auto;
   max-width: none;
 
-  margin: 0 0 clamp(27px, 2.5dvh, 33px);
+  margin: 0 0 clamp(4px, 2.5dvh, 10px);
 
   object-fit: contain;
 
@@ -236,11 +238,15 @@ img {
   display: grid;
   width: 100%;
 
+  grid-template-columns: 1fr 1fr;
+
   justify-items: stretch;
 
   gap: clamp(10px, 1.3dvh, 13px);
 
   margin: 0;
+  margin-left: calc((100vw - 100%) / 2 - clamp(28px, 9vw, 42px));
+
   padding: 0;
 }
 
@@ -509,7 +515,11 @@ img {
     top: 45dvh;
     left: 36px;
 
-    width: 184px;
+    width: 350px;
+  }
+
+  .overlay-buttons {
+    margin-left: calc((100vw - 100%) / 2 - 36px);
   }
 
   .overlay-logo {
@@ -550,7 +560,11 @@ img {
     top: 45dvh;
     left: 40px;
 
-    width: 194px;
+    width: 376px;
+  }
+
+  .overlay-buttons {
+    margin-left: calc((100vw - 100%) / 2 - 40px);
   }
 
   .overlay-logo {
@@ -589,7 +603,7 @@ img {
   .overlay-content {
     top: clamp(245px, 40dvh, 300px);
 
-    width: clamp(160px, 43vw, 182px);
+    width: clamp(333px, 86vw, 377px);
   }
 
   .overlay-logo-lockup {
@@ -606,7 +620,7 @@ img {
   }
 
   .overlay-est-logo {
-    margin-bottom: 24px;
+    margin-bottom: 1px;
   }
 
   .overlay-buttons {
@@ -645,7 +659,11 @@ img {
     top: clamp(300px, 44dvh, 380px);
     left: 25px;
 
-    width: 170px;
+    width: 312px;
+  }
+
+  .overlay-buttons {
+    margin-left: calc((100vw - 100%) / 2 - 25px);
   }
 
   .overlay-logo {
@@ -660,7 +678,7 @@ img {
   }
 
   .overlay-est-logo {
-    margin-bottom: 25px;
+    margin-bottom: 2px;
   }
 
   .overlay-button {
@@ -694,7 +712,11 @@ img {
   .overlay-content {
     left: 22px;
 
-    width: 164px;
+    width: 294px;
+  }
+
+  .overlay-buttons {
+    margin-left: calc((100vw - 100%) / 2 - 22px);
   }
 
   .overlay-logo {
@@ -707,7 +729,7 @@ img {
   }
 
   .overlay-est-logo {
-    margin-bottom: 22px;
+    margin-bottom: 0px;
   }
 
   .overlay-button {
