@@ -1,7 +1,8 @@
 :root {
-  --gsc-navy-darkest: #0c2763;
-  --gsc-navy-dark: #102e74;
-  --gsc-navy: #244b9d;
+  --gsc-navy-darkest: #071b3b;
+  --gsc-navy-dark: #0c2763;
+  --gsc-navy: #102e74;
+  --gsc-blue: #244b9d;
 
   --gsc-red: #ed1b3a;
   --gsc-red-dark: #c5102e;
@@ -18,6 +19,10 @@
   text-rendering: optimizeLegibility;
 }
 
+/* -------------------------------------------------------
+   Global reset
+------------------------------------------------------- */
+
 *,
 *::before,
 *::after {
@@ -30,8 +35,8 @@ body,
   width: 100%;
   height: 100%;
 
-  min-width: 320px;
-  min-height: 100%;
+  min-width: 0;
+  min-height: 0;
 
   margin: 0;
   padding: 0;
@@ -39,6 +44,11 @@ body,
   overflow: hidden;
 
   background: transparent !important;
+}
+
+html,
+body {
+  overscroll-behavior: none;
 }
 
 body {
@@ -61,7 +71,10 @@ img {
 }
 
 /* -------------------------------------------------------
-   Main transparent mobile overlay
+   Main overlay
+
+   This entire Vite page stays transparent so the Wix
+   carousel can remain visible underneath it.
 ------------------------------------------------------- */
 
 .mobile-landing-overlay {
@@ -81,208 +94,369 @@ img {
 }
 
 /* -------------------------------------------------------
-   Full-width diagonal blue panel
+   Soft lower-page atmosphere
+
+   This is NOT a background image.
+
+   It simply gives the lower portion of the Wix carousel
+   a subtle navy wash so the glass card/buttons remain
+   readable regardless of which carousel image is active.
 ------------------------------------------------------- */
 
-.overlay-panel {
+.bottom-atmosphere {
   position: absolute;
   z-index: 0;
 
   inset: 0;
 
-  width: 100%;
-  height: 100%;
-
-  overflow: visible;
-
   pointer-events: none;
-}
 
-.panel-red-edge {
-  fill: none;
-
-  stroke: var(--gsc-red);
-  stroke-width: 3px;
-
-  stroke-linecap: square;
-  stroke-linejoin: round;
-
-  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 27, 59, 0) 0%,
+      rgba(7, 27, 59, 0) 42%,
+      rgba(7, 27, 59, 0.05) 51%,
+      rgba(7, 27, 59, 0.15) 61%,
+      rgba(7, 27, 59, 0.32) 74%,
+      rgba(7, 27, 59, 0.5) 88%,
+      rgba(7, 27, 59, 0.62) 100%
+    );
 }
 
 /* -------------------------------------------------------
-   Content placement
+   Main content placement
+
+   Instead of positioning with a fixed top value and then
+   translating downward, this entire group is anchored to
+   the bottom of the mobile viewport.
+
+   That makes it substantially more reliable between
+   different phone heights.
 ------------------------------------------------------- */
 
 .overlay-content {
   position: absolute;
   z-index: 2;
 
-  top: clamp(330px, 45dvh, 450px);
-  left: clamp(28px, 9vw, 42px);
+  left: 50%;
+  bottom:
+    max(
+      clamp(22px, 4.5dvh, 48px),
+      env(safe-area-inset-bottom)
+    );
 
   display: flex;
-  width: clamp(353px, 88vw, 413px);
+
+  width: min(
+    calc(100vw - clamp(24px, 6vw, 42px)),
+    560px
+  );
 
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
+
+  gap: clamp(13px, 2dvh, 18px);
 
   margin: 0;
   padding: 0;
 
-  overflow: visible;
-
-  transform: translateY(212px);
+  transform: translateX(-50%);
 }
 
 /* -------------------------------------------------------
-   Side-by-side logo lockup
+   Glass identity card
 ------------------------------------------------------- */
 
-.overlay-logo-lockup {
-  display: flex;
-  width: max-content;
-  max-width: none;
+.identity-card {
+  position: relative;
+  isolation: isolate;
 
-  flex-direction: row;
+  display: grid;
+
+  width: 100%;
+  min-width: 0;
+
+  grid-template-columns:
+    auto
+    1px
+    minmax(0, 1fr);
+
   align-items: center;
 
-  gap: clamp(8px, 1.6dvh, 12px);
+  column-gap: clamp(13px, 3.5vw, 22px);
 
-  margin: 0 0 0 -15px;
-  padding: 0;
+  padding:
+    clamp(17px, 4.2vw, 25px)
+    clamp(17px, 4.8vw, 27px);
 
-  overflow: visible;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: clamp(18px, 4.8vw, 26px);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(79, 111, 157, 0.4) 0%,
+      rgba(29, 64, 116, 0.47) 47%,
+      rgba(8, 38, 88, 0.55) 100%
+    );
+
+  box-shadow:
+    0 18px 42px rgba(0, 14, 42, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+
+  backdrop-filter:
+    blur(16px)
+    saturate(125%);
+
+  -webkit-backdrop-filter:
+    blur(16px)
+    saturate(125%);
+
+  transform: translateZ(0);
+}
+
+/* Subtle light reflection across top of glass */
+
+.identity-card::before {
+  position: absolute;
+  z-index: -1;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 52%;
+
+  content: "";
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.025) 48%,
+      rgba(255, 255, 255, 0)
+    );
 
   pointer-events: none;
 }
 
-.overlay-logo {
-  position: relative;
-  top: 0px;
+/* Subtle blue glow toward lower right */
 
-  width: clamp(72px, 20vw, 88px);
-  height: auto;
-  max-width: none;
+.identity-card::after {
+  position: absolute;
+  z-index: -1;
 
-  flex: 0 0 auto;
+  right: -20%;
+  bottom: -65%;
 
-  margin-left: -3px;
+  width: 70%;
+  aspect-ratio: 1;
 
-  object-fit: contain;
+  border-radius: 50%;
 
-  filter:
-    drop-shadow(0 3px 3px rgba(0, 0, 0, 0.25))
-    drop-shadow(0 0 1px rgba(255, 255, 255, 0.16));
-}
+  content: "";
 
-.overlay-logo-text {
-  width: clamp(167px, 43vw, 197px);
-  height: auto;
-  max-width: none;
+  background:
+    radial-gradient(
+      circle,
+      rgba(64, 108, 184, 0.25) 0%,
+      rgba(64, 108, 184, 0) 70%
+    );
 
-  flex: 0 0 auto;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.28))
-    drop-shadow(0 0 1px rgba(255, 255, 255, 0.14));
+  pointer-events: none;
 }
 
 /* -------------------------------------------------------
-   Red divider
+   Winged G
 ------------------------------------------------------- */
 
-.heading-divider {
-  width: clamp(54px, 14vw, 65px);
+.identity-logo-column {
+  display: grid;
+
+  min-width: 0;
+
+  place-items: center;
+
+  pointer-events: none;
+}
+
+.identity-logo {
+  width: clamp(72px, 21vw, 108px);
+  height: auto;
+  max-width: 100%;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 4px 5px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.22));
+}
+
+/* -------------------------------------------------------
+   Vertical separator
+------------------------------------------------------- */
+
+.identity-divider {
+  width: 1px;
+  height: clamp(84px, 12dvh, 112px);
+
+  align-self: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.7) 18%,
+      rgba(255, 255, 255, 0.7) 82%,
+      rgba(255, 255, 255, 0)
+    );
+}
+
+/* -------------------------------------------------------
+   Brand / wordmark
+------------------------------------------------------- */
+
+.identity-brand {
+  display: flex;
+
+  min-width: 0;
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.identity-wordmark {
+  width: min(100%, 235px);
+  height: auto;
+
+  object-fit: contain;
+  object-position: left center;
+
+  filter:
+    drop-shadow(0 2px 3px rgba(0, 0, 0, 0.28))
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.12));
+}
+
+/* -------------------------------------------------------
+   Greenwich, CT line
+------------------------------------------------------- */
+
+.identity-location {
+  display: flex;
+
+  width: 100%;
+  min-width: 0;
+
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: clamp(7px, 1.2dvh, 10px);
+
+  margin-top: clamp(10px, 1.7dvh, 15px);
+}
+
+.location-red-line {
+  width: clamp(35px, 9vw, 48px);
   height: 3px;
-
-  flex: 0 0 auto;
-
-  margin-top: clamp(5px, 2.5dvh, 11px);
-  margin-right: 0;
-  margin-bottom: clamp(9px, 2.5dvh, 15px);
-  margin-left: 0;
 
   border-radius: 999px;
 
-  background: var(--gsc-red);
+  background:
+    linear-gradient(
+      90deg,
+      var(--gsc-red) 0%,
+      var(--gsc-red-light) 100%
+    );
+
+  box-shadow:
+    0 0 10px rgba(237, 27, 58, 0.16);
+}
+
+.location-text {
+  overflow: hidden;
+
+  max-width: 100%;
+
+  color: rgba(226, 234, 247, 0.72);
+
+  font-family:
+    "Microgramma",
+    "Montserrat",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(8px, 2.25vw, 12px);
+  font-weight: 400;
+
+  letter-spacing: clamp(0.12em, 0.45vw, 0.22em);
+  line-height: 1.2;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.22);
 }
 
 /* -------------------------------------------------------
-   Established logo
-------------------------------------------------------- */
-
-.overlay-est-logo {
-  visibility: hidden;
-
-  width: clamp(54px, 14vw, 65px);
-  height: auto;
-  max-width: none;
-
-  margin: 0 0 clamp(4px, 2.5dvh, 10px);
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.28))
-    drop-shadow(0 0 1px rgba(255, 255, 255, 0.14));
-}
-
-/* -------------------------------------------------------
-   Button group
+   Button row
 ------------------------------------------------------- */
 
 .overlay-buttons {
   display: grid;
+
   width: 100%;
+  min-width: 0;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
 
-  justify-items: stretch;
-
-  gap: clamp(10px, 1.3dvh, 13px);
+  gap: clamp(9px, 2.5vw, 14px);
 
   margin: 0;
-  margin-left: calc((100vw - 100%) / 2 - clamp(28px, 9vw, 42px));
-
   padding: 0;
 }
 
 /* -------------------------------------------------------
    Button base
-
-   The icon tiles have been removed. Each button now uses:
-
-   - A clearly aligned text label
-   - A restrained arrow control
-   - More open horizontal spacing
 ------------------------------------------------------- */
 
 .overlay-button {
   position: relative;
   isolation: isolate;
 
-  display: flex;
-  width: 100%;
+  display: grid;
 
-  min-height: clamp(48px, 5.4dvh, 53px);
+  width: 100%;
+  min-width: 0;
+
+  min-height: clamp(64px, 8.7dvh, 79px);
+
+  grid-template-columns:
+    auto
+    minmax(0, 1fr)
+    auto;
 
   align-items: center;
-  justify-content: center;
 
-  gap: 4px;
+  column-gap: clamp(5px, 1.6vw, 10px);
 
   padding:
-    5px
     7px
-    5px
-    clamp(15px, 3.8vw, 18px);
+    clamp(9px, 2.4vw, 15px);
 
   overflow: hidden;
 
-  border-radius: 9px;
+  border-radius: clamp(13px, 3vw, 17px);
 
   font-family:
     "Microgramma",
@@ -293,11 +467,11 @@ img {
 
   font-synthesis: weight;
 
-  font-size: clamp(8.75px, 2.2vw, 10.75px);
+  font-size: clamp(7.6px, 2.1vw, 11.5px);
   font-weight: 700;
 
-  letter-spacing: 0.06em;
-  line-height: 1;
+  letter-spacing: clamp(0.025em, 0.18vw, 0.07em);
+  line-height: 1.12;
 
   text-transform: uppercase;
 
@@ -310,10 +484,7 @@ img {
     box-shadow 180ms ease;
 }
 
-/*
-  Adds a very restrained highlight along the upper portion
-  of each button without making it look glossy.
-*/
+/* Upper button highlight */
 
 .overlay-button::before {
   position: absolute;
@@ -323,114 +494,146 @@ img {
   right: 0;
   left: 0;
 
-  height: 48%;
+  height: 50%;
 
   content: "";
 
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.12),
       rgba(255, 255, 255, 0)
     );
 
   pointer-events: none;
 }
 
+/* -------------------------------------------------------
+   Button text
+------------------------------------------------------- */
+
 .button-label {
   display: block;
-  flex-shrink: 0;
 
-  overflow: visible;
+  min-width: 0;
+
+  text-align: left;
 
   white-space: nowrap;
 
-  text-align: left;
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.16);
 }
 
+/* -------------------------------------------------------
+   Button icons
+------------------------------------------------------- */
+
+.button-icon-shell,
 .button-arrow-shell {
   display: grid;
-
-  width: clamp(29px, 7.3vw, 32px);
-  height: clamp(29px, 7.3vw, 32px);
 
   flex: 0 0 auto;
 
   place-items: center;
-
-  transition: transform 180ms ease;
 }
 
-/* -------------------------------------------------------
-   Primary button
-------------------------------------------------------- */
-
-.overlay-button--primary {
-  color: var(--gsc-white);
-
-  border: 1px solid rgba(255, 119, 138, 0.72);
-
-  background:
-    linear-gradient(
-      105deg,
-      var(--gsc-red-dark) 0%,
-      var(--gsc-red) 58%,
-      var(--gsc-red-light) 100%
-    );
-
-  box-shadow:
-    0 9px 21px rgba(78, 0, 19, 0.27),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
-    inset 0 -1px 0 rgba(104, 0, 23, 0.3);
+.button-icon-shell {
+  width: clamp(20px, 5vw, 26px);
+  height: clamp(20px, 5vw, 26px);
 }
 
+.button-arrow-shell {
+  width: clamp(17px, 4.5vw, 24px);
+  height: clamp(17px, 4.5vw, 24px);
 
-/* -------------------------------------------------------
-   Secondary button
-------------------------------------------------------- */
-
-.overlay-button--secondary {
-  color: var(--gsc-white);
-
-  border: 1px solid rgba(216, 229, 255, 0.76);
-
-  background:
-    linear-gradient(
-      110deg,
-      rgba(4, 25, 66, 0.74) 0%,
-      rgba(15, 53, 116, 0.69) 100%
-    );
-
-  box-shadow:
-    0 7px 18px rgba(0, 10, 35, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    inset 0 0 0 1px rgba(66, 108, 180, 0.1);
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  transition:
+    transform 180ms ease;
 }
 
-
-/* -------------------------------------------------------
-   Arrow icon
-------------------------------------------------------- */
-
-.button-arrow {
-  width: clamp(16px, 4vw, 18px);
-  height: clamp(16px, 4vw, 18px);
+.button-icon {
+  width: 100%;
+  height: 100%;
 
   fill: none;
   stroke: currentColor;
 
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2;
+  stroke-width: 1.55;
+}
 
-  transition: transform 180ms ease;
+.button-arrow {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+
+  transition:
+    transform 180ms ease;
 }
 
 /* -------------------------------------------------------
-   Button interaction
+   Crossbar Login
+------------------------------------------------------- */
+
+.overlay-button--primary {
+  color: var(--gsc-white);
+
+  border: 1px solid rgba(255, 118, 139, 0.72);
+
+  background:
+    linear-gradient(
+      110deg,
+      var(--gsc-red-dark) 0%,
+      var(--gsc-red) 54%,
+      var(--gsc-red-light) 100%
+    );
+
+  box-shadow:
+    0 11px 24px rgba(83, 0, 22, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.17),
+    inset 0 -1px 0 rgba(104, 0, 23, 0.28);
+}
+
+/* -------------------------------------------------------
+   Memberships
+------------------------------------------------------- */
+
+.overlay-button--secondary {
+  color: var(--gsc-white);
+
+  border: 1px solid rgba(213, 227, 255, 0.67);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(6, 28, 73, 0.83) 0%,
+      rgba(13, 48, 107, 0.8) 52%,
+      rgba(26, 67, 139, 0.76) 100%
+    );
+
+  box-shadow:
+    0 10px 22px rgba(0, 12, 38, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 0 0 1px rgba(76, 119, 190, 0.08);
+
+  backdrop-filter:
+    blur(10px)
+    saturate(115%);
+
+  -webkit-backdrop-filter:
+    blur(10px)
+    saturate(115%);
+}
+
+/* -------------------------------------------------------
+   Interaction
 ------------------------------------------------------- */
 
 .overlay-button:hover,
@@ -442,35 +645,36 @@ img {
 
 .overlay-button--primary:hover,
 .overlay-button--primary:focus-visible {
-  border-color: rgba(255, 170, 181, 0.92);
-
-  background:
-    linear-gradient(
-      105deg,
-      #b20d2c 0%,
-      #ef1d3e 57%,
-      #ff3a56 100%
-    );
-
-  box-shadow:
-    0 13px 26px rgba(78, 0, 19, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.19);
-}
-
-.overlay-button--secondary:hover,
-.overlay-button--secondary:focus-visible {
-  border-color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 180, 190, 0.92);
 
   background:
     linear-gradient(
       110deg,
-      rgba(7, 34, 86, 0.88) 0%,
-      rgba(25, 68, 144, 0.82) 100%
+      #b20d2c 0%,
+      #ef1d3e 54%,
+      #ff3c58 100%
     );
 
   box-shadow:
-    0 11px 23px rgba(0, 10, 35, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.11);
+    0 15px 29px rgba(78, 0, 19, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.overlay-button--secondary:hover,
+.overlay-button--secondary:focus-visible {
+  border-color: rgba(255, 255, 255, 0.92);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(8, 35, 87, 0.94) 0%,
+      rgba(18, 58, 126, 0.9) 52%,
+      rgba(31, 78, 158, 0.88) 100%
+    );
+
+  box-shadow:
+    0 14px 27px rgba(0, 10, 35, 0.31),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .overlay-button:hover .button-arrow-shell,
@@ -484,263 +688,388 @@ img {
 }
 
 .overlay-button:active {
-  transform: translateY(0) scale(0.985);
+  transform:
+    translateY(0)
+    scale(0.985);
 }
 
 /* -------------------------------------------------------
-   iPhone 17 / 17 Pro
-   Approximate viewport: 402 × 874
+   320px - 359px
+   Smaller / narrower phones
+------------------------------------------------------- */
+
+@media (max-width: 359px) {
+  .overlay-content {
+    width: calc(100vw - 20px);
+
+    gap: 10px;
+
+    bottom:
+      max(
+        16px,
+        env(safe-area-inset-bottom)
+      );
+  }
+
+  .identity-card {
+    column-gap: 10px;
+
+    padding:
+      14px
+      13px;
+
+    border-radius: 17px;
+  }
+
+  .identity-logo {
+    width: clamp(61px, 20vw, 68px);
+  }
+
+  .identity-divider {
+    height: 79px;
+  }
+
+  .identity-wordmark {
+    width: min(100%, 151px);
+  }
+
+  .identity-location {
+    gap: 6px;
+
+    margin-top: 8px;
+  }
+
+  .location-red-line {
+    width: 31px;
+    height: 2px;
+  }
+
+  .location-text {
+    font-size: 7px;
+
+    letter-spacing: 0.11em;
+  }
+
+  .overlay-buttons {
+    gap: 7px;
+  }
+
+  .overlay-button {
+    min-height: 57px;
+
+    column-gap: 4px;
+
+    padding:
+      6px
+      7px;
+
+    border-radius: 12px;
+
+    font-size: 6.7px;
+
+    letter-spacing: 0.015em;
+  }
+
+  .button-icon-shell {
+    width: 18px;
+    height: 18px;
+  }
+
+  .button-arrow-shell {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* -------------------------------------------------------
+   360px - 389px
+------------------------------------------------------- */
+
+@media (min-width: 360px) and (max-width: 389px) {
+  .overlay-content {
+    width: calc(100vw - 26px);
+
+    bottom:
+      max(
+        clamp(18px, 3.5dvh, 31px),
+        env(safe-area-inset-bottom)
+      );
+  }
+
+  .identity-logo {
+    width: clamp(68px, 20vw, 76px);
+  }
+
+  .identity-wordmark {
+    width: min(100%, 174px);
+  }
+
+  .overlay-button {
+    min-height: clamp(59px, 8dvh, 67px);
+
+    font-size: clamp(7.1px, 1.95vw, 8px);
+  }
+}
+
+/* -------------------------------------------------------
+   iPhone 17 / similar
+   Roughly 390px - 419px
 ------------------------------------------------------- */
 
 @media (min-width: 390px) and (max-width: 419px) {
   .overlay-content {
-    top: 45dvh;
-    left: 36px;
+    width: calc(100vw - 30px);
 
-    width: 350px;
+    gap: clamp(12px, 1.8dvh, 16px);
+
+    bottom:
+      max(
+        clamp(24px, 4.5dvh, 42px),
+        env(safe-area-inset-bottom)
+      );
   }
 
-  .overlay-buttons {
-    margin-left: calc((100vw - 100%) / 2 - 36px);
+  .identity-card {
+    column-gap: clamp(15px, 3.8vw, 18px);
+
+    padding:
+      clamp(19px, 4.7vw, 22px)
+      clamp(19px, 4.7vw, 22px);
   }
 
-  .overlay-logo {
-    width: 79px;
+  .identity-logo {
+    width: clamp(78px, 20.5vw, 86px);
   }
 
-  .heading-divider {
-    margin-top: 7px;
-    margin-bottom: 11px;
+  .identity-divider {
+    height: clamp(90px, 11dvh, 102px);
+  }
+
+  .identity-wordmark {
+    width: min(100%, 195px);
+  }
+
+  .location-text {
+    font-size: clamp(8.5px, 2.1vw, 9.5px);
   }
 
   .overlay-button {
-    min-height: 50px;
+    min-height: clamp(64px, 8.4dvh, 72px);
 
-    padding-left: 16px;
-
-    font-size: 9.25px;
-  }
-
-  .button-arrow-shell {
-    width: 30px;
-    height: 30px;
-  }
-
-  .button-arrow {
-    width: 16px;
-    height: 16px;
+    font-size: clamp(8px, 2vw, 9px);
   }
 }
 
 /* -------------------------------------------------------
-   iPhone 17 Pro Max
-   Approximate viewport: 440 × 956
+   iPhone Pro Max / larger phones
+   420px - 480px
 ------------------------------------------------------- */
 
 @media (min-width: 420px) and (max-width: 480px) {
   .overlay-content {
-    top: 45dvh;
-    left: 40px;
+    width: calc(100vw - 34px);
 
-    width: 376px;
+    gap: clamp(14px, 1.9dvh, 18px);
 
-    transform: translateY(230px);
+    bottom:
+      max(
+        clamp(28px, 5dvh, 49px),
+        env(safe-area-inset-bottom)
+      );
   }
 
-  .overlay-buttons {
-    margin-left: calc((100vw - 100%) / 2 - 40px);
+  .identity-card {
+    column-gap: clamp(17px, 4vw, 21px);
+
+    padding:
+      clamp(21px, 4.8vw, 25px)
+      clamp(22px, 5vw, 27px);
   }
 
-  .overlay-logo {
-    width: 88px;
+  .identity-logo {
+    width: clamp(84px, 20.5vw, 94px);
   }
 
-  .heading-divider {
-    margin-top: 10px;
-    margin-bottom: 9px;
+  .identity-divider {
+    height: clamp(98px, 11.5dvh, 112px);
   }
 
-  .overlay-est-logo {
-    margin-bottom: 0px;
+  .identity-wordmark {
+    width: min(100%, 214px);
+  }
+
+  .identity-location {
+    margin-top: clamp(11px, 1.5dvh, 15px);
+  }
+
+  .location-text {
+    font-size: clamp(9px, 2.1vw, 10.5px);
   }
 
   .overlay-button {
-    min-height: 53px;
+    min-height: clamp(68px, 8.4dvh, 78px);
 
-    padding-left: 18px;
+    font-size: clamp(8.7px, 2.05vw, 10px);
+  }
 
-    font-size: 10.25px;
+  .button-icon-shell {
+    width: clamp(22px, 5vw, 25px);
+    height: clamp(22px, 5vw, 25px);
   }
 
   .button-arrow-shell {
-    width: 32px;
-    height: 32px;
+    width: clamp(19px, 4.4vw, 22px);
+    height: clamp(19px, 4.4vw, 22px);
+  }
+}
+
+/* -------------------------------------------------------
+   481px - 767px
+   Larger mobile-width embeds
+------------------------------------------------------- */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .overlay-content {
+    width: min(calc(100vw - 48px), 560px);
+
+    bottom:
+      max(
+        clamp(32px, 5.5dvh, 58px),
+        env(safe-area-inset-bottom)
+      );
   }
 
-  .button-arrow {
-    width: 18px;
-    height: 18px;
+  .identity-logo {
+    width: clamp(95px, 18vw, 108px);
+  }
+
+  .identity-wordmark {
+    width: min(100%, 235px);
+  }
+
+  .overlay-button {
+    min-height: clamp(71px, 8.5dvh, 82px);
+
+    font-size: clamp(10px, 1.85vw, 11.5px);
   }
 }
 
 /* -------------------------------------------------------
    Short mobile screens
+
+   Height compression is handled separately so a shorter
+   phone does not push the buttons below the viewport.
 ------------------------------------------------------- */
 
-@media (max-height: 720px) and (max-width: 767px) {
+@media (max-height: 740px) and (max-width: 767px) {
   .overlay-content {
-    top: clamp(245px, 40dvh, 300px);
-
-    width: clamp(333px, 86vw, 377px);
-  }
-
-  .overlay-logo-lockup {
-    gap: 10px;
-  }
-
-  .overlay-logo {
-    width: clamp(64px, 20vw, 76px);
-  }
-
-  .heading-divider {
-    margin-top: 2px;
-    margin-bottom: 6px;
-  }
-
-  .overlay-est-logo {
-    margin-bottom: 1px;
-  }
-
-  .overlay-buttons {
     gap: 9px;
+
+    bottom:
+      max(
+        12px,
+        env(safe-area-inset-bottom)
+      );
+  }
+
+  .identity-card {
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  .identity-logo {
+    width: clamp(60px, 18vw, 75px);
+  }
+
+  .identity-divider {
+    height: 75px;
+  }
+
+  .identity-wordmark {
+    width: min(100%, 177px);
+  }
+
+  .identity-location {
+    gap: 5px;
+
+    margin-top: 7px;
+  }
+
+  .location-red-line {
+    height: 2px;
+  }
+
+  .location-text {
+    font-size: clamp(6.6px, 1.9vw, 8px);
   }
 
   .overlay-button {
-    min-height: 45px;
-
-    padding:
-      4px
-      5px
-      4px
-      14px;
-
-    font-size: 7.25px;
-  }
-
-  .button-arrow-shell {
-    width: 27px;
-    height: 27px;
-  }
-
-  .button-arrow {
-    width: 15px;
-    height: 15px;
+    min-height: 53px;
   }
 }
 
 /* -------------------------------------------------------
-   Small phones
+   Very short mobile screens
 ------------------------------------------------------- */
 
-@media (max-width: 370px) {
+@media (max-height: 620px) and (max-width: 767px) {
   .overlay-content {
-    top: clamp(300px, 44dvh, 380px);
-    left: 25px;
+    gap: 7px;
 
-    width: 312px;
+    bottom:
+      max(
+        8px,
+        env(safe-area-inset-bottom)
+      );
   }
 
-  .overlay-buttons {
-    margin-left: calc((100vw - 100%) / 2 - 25px);
+  .identity-card {
+    padding:
+      10px
+      12px;
+
+    border-radius: 15px;
   }
 
-  .overlay-logo {
-    width: 71px;
-
-    margin-left: -2px;
+  .identity-logo {
+    width: clamp(54px, 17vw, 66px);
   }
 
-  .heading-divider {
-    margin-top: 4px;
-    margin-bottom: 8px;
+  .identity-divider {
+    height: 66px;
   }
 
-  .overlay-est-logo {
-    margin-bottom: 2px;
+  .identity-wordmark {
+    width: min(100%, 160px);
+  }
+
+  .identity-location {
+    margin-top: 5px;
   }
 
   .overlay-button {
     min-height: 47px;
 
-    padding:
-      4px
-      5px
-      4px
-      14px;
+    border-radius: 10px;
 
-    font-size: 7.5px;
+    font-size: clamp(6.5px, 1.8vw, 8px);
+  }
+
+  .button-icon-shell {
+    width: 17px;
+    height: 17px;
   }
 
   .button-arrow-shell {
-    width: 28px;
-    height: 28px;
-  }
-
-  .button-arrow {
-    width: 15px;
-    height: 15px;
-  }
-}
-
-/* -------------------------------------------------------
-   Very narrow phones
-------------------------------------------------------- */
-
-@media (max-width: 340px) {
-  .overlay-content {
-    left: 22px;
-
-    width: 294px;
-  }
-
-  .overlay-buttons {
-    margin-left: calc((100vw - 100%) / 2 - 22px);
-  }
-
-  .overlay-logo {
-    width: 65px;
-  }
-
-  .heading-divider {
-    margin-top: 1px;
-    margin-bottom: 5px;
-  }
-
-  .overlay-est-logo {
-    margin-bottom: 0px;
-  }
-
-  .overlay-button {
-    min-height: 44px;
-
-    padding-left: 12px;
-
-    font-size: 6.75px;
-  }
-
-  .button-arrow-shell {
-    width: 26px;
-    height: 26px;
-  }
-
-  .button-arrow {
     width: 14px;
     height: 14px;
   }
 }
 
 /* -------------------------------------------------------
-   Hide at tablet and desktop widths
+   Hide EVERYTHING at tablet / desktop widths
+
+   This keeps the Vite overlay mobile-only.
 ------------------------------------------------------- */
 
 @media (min-width: 768px) {
@@ -754,6 +1083,9 @@ img {
     min-height: 0 !important;
 
     overflow: hidden !important;
+
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 
   .mobile-landing-overlay {
@@ -762,7 +1094,7 @@ img {
 }
 
 /* -------------------------------------------------------
-   Accessibility
+   Reduced motion
 ------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
