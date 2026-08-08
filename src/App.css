@@ -161,7 +161,7 @@ img {
   margin: 0;
   padding: 0;
 
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-40px);
 }
 
 /* -------------------------------------------------------
@@ -387,8 +387,10 @@ img {
   color: rgba(226, 234, 247, 0.72);
 
   font-family:
-    "Microgramma",
-    "Montserrat",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
     Arial,
     sans-serif;
 
@@ -442,7 +444,6 @@ img {
   min-height: clamp(64px, 8.7dvh, 79px);
 
   grid-template-columns:
-    auto
     minmax(0, 1fr)
     auto;
 
@@ -459,15 +460,16 @@ img {
   border-radius: clamp(13px, 3vw, 17px);
 
   font-family:
-    "Microgramma",
-    "Barlow Condensed",
-    "Arial Narrow",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
     Arial,
     sans-serif;
 
   font-synthesis: weight;
 
-  font-size: clamp(7.6px, 2.1vw, 11.5px);
+  font-size: clamp(10.5px, 3vw, 16px);
   font-weight: 700;
 
   letter-spacing: clamp(0.025em, 0.18vw, 0.07em);
@@ -517,7 +519,7 @@ img {
 
   min-width: 0;
 
-  text-align: left;
+  text-align: center;
 
   white-space: nowrap;
 
@@ -526,41 +528,21 @@ img {
 }
 
 /* -------------------------------------------------------
-   Button icons
+   Button arrow
 ------------------------------------------------------- */
 
-.button-icon-shell,
 .button-arrow-shell {
   display: grid;
 
   flex: 0 0 auto;
 
-  place-items: center;
-}
-
-.button-icon-shell {
-  width: clamp(20px, 5vw, 26px);
-  height: clamp(20px, 5vw, 26px);
-}
-
-.button-arrow-shell {
   width: clamp(17px, 4.5vw, 24px);
   height: clamp(17px, 4.5vw, 24px);
 
+  place-items: center;
+
   transition:
     transform 180ms ease;
-}
-
-.button-icon {
-  width: 100%;
-  height: 100%;
-
-  fill: none;
-  stroke: currentColor;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.55;
 }
 
 .button-arrow {
@@ -765,14 +747,9 @@ img {
 
     border-radius: 12px;
 
-    font-size: 6.7px;
+    font-size: 9.5px;
 
     letter-spacing: 0.015em;
-  }
-
-  .button-icon-shell {
-    width: 18px;
-    height: 18px;
   }
 
   .button-arrow-shell {
@@ -807,7 +784,7 @@ img {
   .overlay-button {
     min-height: clamp(59px, 8dvh, 67px);
 
-    font-size: clamp(7.1px, 1.95vw, 8px);
+    font-size: clamp(10px, 2.7vw, 11px);
   }
 }
 
@@ -856,7 +833,7 @@ img {
   .overlay-button {
     min-height: clamp(64px, 8.4dvh, 72px);
 
-    font-size: clamp(8px, 2vw, 9px);
+    font-size: clamp(11px, 2.8vw, 12.5px);
   }
 }
 
@@ -909,12 +886,7 @@ img {
   .overlay-button {
     min-height: clamp(68px, 8.4dvh, 78px);
 
-    font-size: clamp(8.7px, 2.05vw, 10px);
-  }
-
-  .button-icon-shell {
-    width: clamp(22px, 5vw, 25px);
-    height: clamp(22px, 5vw, 25px);
+    font-size: clamp(12px, 2.9vw, 14px);
   }
 
   .button-arrow-shell {
@@ -950,7 +922,7 @@ img {
   .overlay-button {
     min-height: clamp(71px, 8.5dvh, 82px);
 
-    font-size: clamp(10px, 1.85vw, 11.5px);
+    font-size: clamp(14px, 2.6vw, 16px);
   }
 }
 
@@ -1052,12 +1024,7 @@ img {
 
     border-radius: 10px;
 
-    font-size: clamp(6.5px, 1.8vw, 8px);
-  }
-
-  .button-icon-shell {
-    width: 17px;
-    height: 17px;
+    font-size: clamp(9px, 2.5vw, 11px);
   }
 
   .button-arrow-shell {
