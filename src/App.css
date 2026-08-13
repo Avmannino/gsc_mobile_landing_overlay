@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap");
+
 :root {
   --gsc-navy-deep: #04142d;
   --gsc-navy-dark: #071b3b;
@@ -223,7 +225,7 @@ svg {
 ========================================================= */
 
 .brand-logo {
-  width: clamp(290px, 81vw, 475px);
+  width: clamp(220px, 68vw, 320px);
   height: auto;
 
   margin: 0 auto;
@@ -577,7 +579,7 @@ svg {
 
 
   .brand-logo {
-    width: clamp(238px, 85vw, 317px);
+    width: clamp(195px, 66vw, 225px);
   }
 
 
@@ -642,7 +644,7 @@ svg {
 
 
   .brand-logo {
-    width: clamp(264px, 84vw, 343px);
+    width: clamp(215px, 67vw, 255px);
   }
 
 
@@ -684,7 +686,7 @@ svg {
 
 
   .brand-logo {
-    width: clamp(290px, 81vw, 370px);
+    width: clamp(235px, 67vw, 280px);
   }
 
 
@@ -726,7 +728,7 @@ svg {
 
 
   .brand-logo {
-    width: clamp(317px, 80vw, 396px);
+    width: clamp(260px, 66vw, 310px);
   }
 
 
@@ -777,7 +779,7 @@ svg {
 
 
   .brand-logo {
-    width: clamp(370px, 73vw, 475px);
+    width: clamp(285px, 62vw, 360px);
   }
 
 
@@ -829,7 +831,7 @@ svg {
 
 
   .brand-logo {
-    width: clamp(224px, 79vw, 290px);
+    width: clamp(195px, 62vw, 245px);
   }
 
 
@@ -869,7 +871,7 @@ svg {
 
 
   .brand-logo {
-    width: clamp(198px, 77vw, 251px);
+    width: clamp(175px, 58vw, 220px);
   }
 
 
