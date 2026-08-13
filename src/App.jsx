@@ -22,30 +22,8 @@ function ArrowIcon() {
 function App() {
   return (
     <main className="mobile-landing-overlay">
-      <style>
-        {`
-          @font-face {
-            font-family: "Microgramma";
-            src: url("${import.meta.env.BASE_URL}fonts/Microgramma Regular.ttf")
-              format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-          }
-
-          @font-face {
-            font-family: "Microgramma Extend Medium";
-            src: url("${import.meta.env.BASE_URL}fonts/Microgramma Extend Medium.otf")
-              format("opentype");
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-          }
-        `}
-      </style>
-
       <div
-        className="bottom-atmosphere"
+        className="bottom-gradient"
         aria-hidden="true"
       />
 
@@ -53,39 +31,17 @@ function App() {
         className="overlay-content"
         aria-label="Greenwich Skating Club"
       >
-        <div className="identity-card">
-          <div className="identity-logo-column">
-            <img
-              className="identity-logo"
-              src={`${import.meta.env.BASE_URL}gsc-logo.png`}
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-
-          <div
-            className="identity-divider"
-            aria-hidden="true"
+        <div className="brand-lockup">
+          <img
+            className="brand-logo"
+            src={`${import.meta.env.BASE_URL}gsc-logo.png`}
+            alt="Greenwich Skating Club"
           />
 
-          <div className="identity-brand">
-            <img
-              className="identity-wordmark"
-              src={`${import.meta.env.BASE_URL}gsc-text-logo.png`}
-              alt="Greenwich Skating Club"
-            />
-
-            <div className="identity-location">
-              <span
-                className="location-red-line"
-                aria-hidden="true"
-              />
-
-              <span className="location-text">
-                11 Cardinal Rd. Greenwich, CT
-              </span>
-            </div>
-          </div>
+          <div
+            className="brand-divider"
+            aria-hidden="true"
+          />
         </div>
 
         <div className="overlay-buttons">
@@ -119,6 +75,10 @@ function App() {
             </span>
           </a>
         </div>
+
+        <p className="brand-address">
+          11 Cardinal Rd. Greenwich, CT
+        </p>
       </section>
     </main>
   );
