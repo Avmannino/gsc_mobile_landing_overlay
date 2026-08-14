@@ -188,7 +188,7 @@ svg {
 
   transform:
     translateX(-50%)
-    translateY(-24px);
+    translateY(-54px);
 }
 
 
@@ -688,7 +688,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-8px);
+      translateY(-38px);
   }
 
 
@@ -791,7 +791,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-14px);
+      translateY(-44px);
   }
 
 
@@ -902,7 +902,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-18px);
+      translateY(-48px);
   }
 
 
@@ -1013,7 +1013,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-20px);
+      translateY(-50px);
   }
 
 
@@ -1112,7 +1112,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-22px);
+      translateY(-52px);
   }
 
 
@@ -1212,7 +1212,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-6px);
+      translateY(-36px);
   }
 
 
@@ -1290,7 +1290,8 @@ svg {
     gap: 7px;
 
     transform:
-      translateX(-50%);
+      translateX(-50%)
+      translateY(-30px);
   }
 
 
