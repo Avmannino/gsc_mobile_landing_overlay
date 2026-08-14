@@ -123,13 +123,13 @@ svg {
     linear-gradient(
       180deg,
       rgba(4, 20, 45, 0) 0%,
-      rgba(4, 20, 45, 0) 30%,
-      rgba(4, 20, 45, 0.05) 36%,
-      rgba(4, 20, 45, 0.16) 42%,
-      rgba(4, 20, 45, 0.38) 50%,
-      rgba(4, 20, 45, 0.66) 58%,
-      rgba(4, 20, 45, 0.86) 67%,
-      rgba(4, 20, 45, 0.96) 80%,
+      rgba(4, 20, 45, 0) 39%,
+      rgba(4, 20, 45, 0.05) 44%,
+      rgba(4, 20, 45, 0.16) 49%,
+      rgba(4, 20, 45, 0.38) 56%,
+      rgba(4, 20, 45, 0.66) 63%,
+      rgba(4, 20, 45, 0.86) 71%,
+      rgba(4, 20, 45, 0.96) 83%,
       rgba(4, 20, 45, 0.985) 100%
     );
 }
@@ -184,11 +184,11 @@ svg {
   flex-direction: column;
   align-items: stretch;
 
-  gap: clamp(16px, 2.2dvh, 22px);
+  gap: clamp(26px, 3.5dvh, 32px);
 
   transform:
     translateX(-50%)
-    translateY(-59px);
+    translateY(-49px);
 }
 
 
@@ -292,13 +292,13 @@ svg {
 ========================================================= */
 
 .identity-logo {
-  width: 69%;
+  width: 111%;
   height: auto;
-  max-width: 100%;
+  max-width: none;
 
   object-fit: contain;
 
-  transform: translate(-6px, 2px);
+  transform: translate(-28px, -2px);
 
   filter:
     drop-shadow(
@@ -322,7 +322,7 @@ svg {
   align-items: center;
   justify-content: center;
 
-  margin-top: 0px;
+  margin-top: 8px;
 }
 
 
@@ -333,7 +333,7 @@ svg {
 .identity-text-block {
   display: flex;
 
-  width: min(100%, 230px);
+  width: min(100%, 260px);
   min-width: 0;
 
   flex-direction: column;
@@ -401,7 +401,7 @@ svg {
     clamp(14px, 2dvh, 19px);
 
   color:
-    rgba(235, 240, 249, 0.84);
+    rgba(235, 240, 249, 0.65);
 
   font-family:
     "Microgramma Extend Medium",
@@ -492,7 +492,7 @@ svg {
   overflow: hidden;
 
   border-radius:
-    clamp(14px, 3.7vw, 20px);
+    clamp(10px, 2.8vw, 15px);
 
   color: var(--gsc-white);
 
@@ -561,7 +561,7 @@ svg {
     2px solid
     #e51837;
 
-  background: transparent;
+  background: #e51837;
 }
 
 
@@ -630,11 +630,11 @@ svg {
         env(safe-area-inset-bottom)
       );
 
-    gap: 11px;
+    gap: 21px;
 
     transform:
       translateX(-50%)
-      translateY(-43px);
+      translateY(-33px);
   }
 
 
@@ -662,7 +662,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 180px);
+      min(100%, 203px);
   }
 
 
@@ -697,7 +697,7 @@ svg {
       6px
       10px;
 
-    border-radius: 12px;
+    border-radius: 9px;
 
     font-size: 16px;
 
@@ -732,14 +732,14 @@ svg {
 
     gap:
       clamp(
-        12px,
-        1.8dvh,
-        16px
+        22px,
+        3.1dvh,
+        26px
       );
 
     transform:
       translateX(-50%)
-      translateY(-49px);
+      translateY(-39px);
   }
 
 
@@ -773,7 +773,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 196px);
+      min(100%, 221px);
   }
 
 
@@ -848,14 +848,14 @@ svg {
 
     gap:
       clamp(
-        14px,
-        2dvh,
-        18px
+        24px,
+        3.3dvh,
+        28px
       );
 
     transform:
       translateX(-50%)
-      translateY(-53px);
+      translateY(-43px);
   }
 
 
@@ -889,7 +889,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 210px);
+      min(100%, 237px);
   }
 
 
@@ -964,14 +964,14 @@ svg {
 
     gap:
       clamp(
-        15px,
-        2dvh,
-        20px
+        25px,
+        3.3dvh,
+        30px
       );
 
     transform:
       translateX(-50%)
-      translateY(-55px);
+      translateY(-45px);
   }
 
 
@@ -1005,7 +1005,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 225px);
+      min(100%, 254px);
   }
 
 
@@ -1068,14 +1068,14 @@ svg {
 
     gap:
       clamp(
-        17px,
-        2.2dvh,
-        22px
+        27px,
+        3.5dvh,
+        32px
       );
 
     transform:
       translateX(-50%)
-      translateY(-57px);
+      translateY(-47px);
   }
 
 
@@ -1114,7 +1114,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 245px);
+      min(100%, 277px);
   }
 
 
@@ -1163,11 +1163,11 @@ svg {
       linear-gradient(
         180deg,
         rgba(4, 20, 45, 0) 0%,
-        rgba(4, 20, 45, 0) 25%,
-        rgba(4, 20, 45, 0.1) 33%,
-        rgba(4, 20, 45, 0.42) 45%,
-        rgba(4, 20, 45, 0.76) 57%,
-        rgba(4, 20, 45, 0.94) 71%,
+        rgba(4, 20, 45, 0) 34%,
+        rgba(4, 20, 45, 0.1) 41%,
+        rgba(4, 20, 45, 0.42) 52%,
+        rgba(4, 20, 45, 0.76) 62%,
+        rgba(4, 20, 45, 0.94) 74.5%,
         rgba(4, 20, 45, 0.985) 100%
       );
   }
@@ -1180,11 +1180,11 @@ svg {
         env(safe-area-inset-bottom)
       );
 
-    gap: 10px;
+    gap: 20px;
 
     transform:
       translateX(-50%)
-      translateY(-41px);
+      translateY(-31px);
   }
 
 
@@ -1217,7 +1217,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 175px);
+      min(100%, 198px);
   }
 
 
@@ -1264,11 +1264,11 @@ svg {
         env(safe-area-inset-bottom)
       );
 
-    gap: 7px;
+    gap: 17px;
 
     transform:
       translateX(-50%)
-      translateY(-35px);
+      translateY(-25px);
   }
 
 
@@ -1301,7 +1301,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 156px);
+      min(100%, 176px);
   }
 
 
@@ -1327,7 +1327,7 @@ svg {
   .overlay-button {
     min-height: 40px;
 
-    border-radius: 11px;
+    border-radius: 8px;
 
     font-size:
       clamp(
