@@ -6,19 +6,6 @@ const LOGIN_URL =
 const MEMBERSHIP_URL =
   "https://wingsarenact.wixstudio.com/gscnewsite/membership";
 
-function ArrowIcon() {
-  return (
-    <svg
-      className="button-arrow"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="M5 12H19" />
-      <path d="M14 7L19 12L14 17" />
-    </svg>
-  );
-}
-
 function App() {
   return (
     <main className="mobile-landing-overlay">
@@ -31,17 +18,36 @@ function App() {
         className="overlay-content"
         aria-label="Greenwich Skating Club"
       >
-        <div className="brand-lockup">
-          <img
-            className="brand-logo"
-            src={`${import.meta.env.BASE_URL}gsc-logo.png`}
-            alt="Greenwich Skating Club"
-          />
-
+        <div className="identity-card">
           <div
-            className="brand-divider"
+            className="identity-badge"
             aria-hidden="true"
-          />
+          >
+            <img
+              className="identity-logo"
+              src={`${import.meta.env.BASE_URL}gsc-logo.png`}
+              alt=""
+            />
+          </div>
+
+          <div className="identity-content">
+            <div className="identity-text-block">
+              <img
+                className="identity-wordmark"
+                src={`${import.meta.env.BASE_URL}gsc-text.png`}
+                alt="Greenwich Skating Club"
+              />
+
+              <span
+                className="location-red-line"
+                aria-hidden="true"
+              />
+
+              <span className="location-text">
+                11 Cardinal Rd. Greenwich, CT
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="overlay-buttons">
@@ -54,10 +60,6 @@ function App() {
             <span className="button-label">
               Crossbar Login
             </span>
-
-            <span className="button-arrow-shell">
-              <ArrowIcon />
-            </span>
           </a>
 
           <a
@@ -69,16 +71,8 @@ function App() {
             <span className="button-label">
               Memberships
             </span>
-
-            <span className="button-arrow-shell">
-              <ArrowIcon />
-            </span>
           </a>
         </div>
-
-        <p className="brand-address">
-          11 Cardinal Rd. Greenwich, CT
-        </p>
       </section>
     </main>
   );
