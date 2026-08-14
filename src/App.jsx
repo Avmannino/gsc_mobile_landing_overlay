@@ -4,11 +4,33 @@ const LOGIN_URL =
   "https://www.greenwichskatingclub.org/login";
 
 const MEMBERSHIP_URL =
-  "https://wingsarenact.wixstudio.com/gscnewsite/membership";
+  "https://wingsarenact.wixstudio.com/gscnewsite/admissions";
 
 function App() {
   return (
     <main className="mobile-landing-overlay">
+      <style>
+        {`
+          @font-face {
+            font-family: "Microgramma Extend Medium";
+            src: url("${import.meta.env.BASE_URL}fonts/Microgramma Extend Medium.otf")
+              format("opentype");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+          }
+
+          @font-face {
+            font-family: "Oswald Medium";
+            src: url("${import.meta.env.BASE_URL}fonts/Oswald-Medium.ttf")
+              format("truetype");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+          }
+        `}
+      </style>
+
       <div
         className="bottom-gradient"
         aria-hidden="true"
