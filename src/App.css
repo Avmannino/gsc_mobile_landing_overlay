@@ -326,9 +326,6 @@ svg {
 
 /* =========================================================
    TEXT BLOCK
-
-   Centered as a whole within the card, while the red
-   line and address left-align to the wordmark's edge.
 ========================================================= */
 
 .identity-text-block {
@@ -338,7 +335,7 @@ svg {
   min-width: 0;
 
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 
@@ -367,7 +364,7 @@ svg {
 .location-red-line {
   display: block;
 
-  width: clamp(70px, 20vw, 96px);
+  width: clamp(52px, 15vw, 72px);
   height: 3px;
 
   margin-top:
@@ -427,7 +424,7 @@ svg {
 
   line-height: 1.25;
 
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
 
   white-space: nowrap;
@@ -721,7 +718,7 @@ svg {
 
 
   .location-red-line {
-    width: 28px;
+    width: 22px;
     height: 2px;
 
     margin-top: 3px;
@@ -1245,7 +1242,7 @@ svg {
 
 
   .location-red-line {
-    width: 56px;
+    width: 42px;
     height: 2px;
 
     margin-top: 1px;
@@ -1324,7 +1321,7 @@ svg {
 
 
   .location-red-line {
-    width: 48px;
+    width: 36px;
 
     margin-top: 2px;
   }
