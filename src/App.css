@@ -205,7 +205,7 @@ svg {
 
   display: flex;
 
-  width: min(87%, 360px);
+  width: min(84%, 345px);
   min-width: 0;
 
   align-self: center;
@@ -450,7 +450,7 @@ svg {
 .overlay-buttons {
   display: grid;
 
-  width: min(87%, 360px);
+  width: min(84%, 345px);
   min-width: 0;
 
   grid-template-columns:
@@ -639,7 +639,7 @@ svg {
 
 
   .identity-card {
-    width: 87%;
+    width: 84%;
 
     margin-top: 32px;
 
@@ -684,7 +684,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 87%;
+    width: 84%;
 
     gap: 8px;
   }
@@ -744,7 +744,7 @@ svg {
 
 
   .identity-card {
-    width: 86%;
+    width: 83%;
 
     margin-top: 37px;
 
@@ -756,7 +756,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 86%;
+    width: 83%;
   }
 
 
@@ -860,7 +860,7 @@ svg {
 
 
   .identity-card {
-    width: 85%;
+    width: 82%;
 
     margin-top: 40px;
 
@@ -872,7 +872,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 85%;
+    width: 82%;
   }
 
 
@@ -976,7 +976,7 @@ svg {
 
 
   .identity-card {
-    width: 90%;
+    width: 87%;
 
     margin-top: 44px;
 
@@ -988,7 +988,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 95%;
+    width: 92%;
   }
 
 
@@ -1082,8 +1082,8 @@ svg {
   .identity-card {
     width:
       min(
-        81%,
-        375px
+        78%,
+        360px
       );
 
     margin-top: 48px;
@@ -1098,8 +1098,8 @@ svg {
   .overlay-buttons {
     width:
       min(
-        81%,
-        375px
+        78%,
+        360px
       );
   }
 
@@ -1189,7 +1189,7 @@ svg {
 
 
   .identity-card {
-    width: 78%;
+    width: 75%;
 
     margin-top: 31px;
 
@@ -1203,7 +1203,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 78%;
+    width: 75%;
   }
 
 
@@ -1273,7 +1273,7 @@ svg {
 
 
   .identity-card {
-    width: 76%;
+    width: 73%;
 
     margin-top: 27px;
 
@@ -1287,7 +1287,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 76%;
+    width: 73%;
   }
 
 
