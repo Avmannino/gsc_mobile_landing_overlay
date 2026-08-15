@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const LOGIN_URL =
@@ -5,6 +6,118 @@ const LOGIN_URL =
 
 const MEMBERSHIP_URL =
   "https://wingsarenact.wixstudio.com/gscnewsite/admissions";
+
+/*
+  Add your carousel images here.
+
+  Put the actual files in:
+  public/images/
+
+  With the current list below, the files should be:
+  public/images/carousel-1.jpg
+  public/images/carousel-2.jpg
+  public/images/carousel-3.jpg
+  public/images/carousel-4.jpg
+
+  You can add or remove image entries from this array at any time.
+*/
+const CAROUSEL_IMAGES = [
+  `${import.meta.env.BASE_URL}images/carousel-1.jpg`,
+  `${import.meta.env.BASE_URL}images/carousel-2.jpg`,
+  `${import.meta.env.BASE_URL}images/carousel-3.jpg`,
+  `${import.meta.env.BASE_URL}images/carousel-4.jpg`,
+];
+
+/*
+  How long each image remains fully visible before the next slide begins.
+*/
+const CAROUSEL_HOLD_MS = 4800;
+
+/*
+  How long the right-to-left slide animation takes.
+*/
+const CAROUSEL_TRANSITION_MS = 900;
+
+function BackgroundCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(
+    CAROUSEL_IMAGES.length > 1 ? 1 : 0,
+  );
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    CAROUSEL_IMAGES.forEach((src) => {
+      const image = new Image();
+      image.src = src;
+    });
+  }, []);
+
+  useEffect(() => {
+    if (
+      CAROUSEL_IMAGES.length <= 1 ||
+      isAnimating
+    ) {
+      return undefined;
+    }
+
+    const holdTimer = window.setTimeout(() => {
+      setIsAnimating(true);
+    }, CAROUSEL_HOLD_MS);
+
+    return () => {
+      window.clearTimeout(holdTimer);
+    };
+  }, [currentIndex, isAnimating]);
+
+  const handleSlideAnimationEnd = () => {
+    if (!isAnimating || CAROUSEL_IMAGES.length <= 1) {
+      return;
+    }
+
+    setCurrentIndex(nextIndex);
+    setNextIndex(
+      (nextIndex + 1) % CAROUSEL_IMAGES.length,
+    );
+    setIsAnimating(false);
+  };
+
+  if (CAROUSEL_IMAGES.length === 0) {
+    return null;
+  }
+
+  return (
+    <div
+      className={`background-carousel${
+        isAnimating ? " is-animating" : ""
+      }`}
+      style={{
+        "--carousel-transition-duration":
+          `${CAROUSEL_TRANSITION_MS}ms`,
+      }}
+      aria-hidden="true"
+    >
+      <img
+        className="carousel-slide carousel-slide--current"
+        src={CAROUSEL_IMAGES[currentIndex]}
+        alt=""
+        draggable="false"
+        decoding="async"
+        fetchPriority="high"
+      />
+
+      {CAROUSEL_IMAGES.length > 1 && (
+        <img
+          className="carousel-slide carousel-slide--next"
+          src={CAROUSEL_IMAGES[nextIndex]}
+          alt=""
+          draggable="false"
+          decoding="async"
+          onAnimationEnd={handleSlideAnimationEnd}
+        />
+      )}
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -30,6 +143,8 @@ function App() {
           }
         `}
       </style>
+
+      <BackgroundCarousel />
 
       <div
         className="bottom-gradient"
