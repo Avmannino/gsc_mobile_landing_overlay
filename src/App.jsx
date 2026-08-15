@@ -54,13 +54,6 @@ function BackgroundCarousel() {
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    CAROUSEL_IMAGES.forEach((src) => {
-      const image = new Image();
-      image.src = src;
-    });
-  }, []);
-
-  useEffect(() => {
     if (
       CAROUSEL_IMAGES.length <= 1 ||
       isAnimating
