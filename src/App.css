@@ -298,7 +298,7 @@ svg {
 
   object-fit: contain;
 
-  transform: translate(-28px, 0px);
+  transform: translate(-28px, -2px);
 
   filter:
     drop-shadow(
@@ -370,7 +370,7 @@ svg {
   height: 3px;
 
   margin-top:
-    clamp(6px, 2.5dvh, 12px);
+    clamp(4px, 2.5dvh, 10px);
 
   border-radius: 999px;
 
@@ -400,7 +400,7 @@ svg {
   max-width: 100%;
 
   margin-top:
-    clamp(12px, 2dvh, 17px);
+    clamp(10px, 2dvh, 15px);
 
   color:
     rgba(235, 240, 249, 0.65);
@@ -670,12 +670,12 @@ svg {
     width: 22px;
     height: 2px;
 
-    margin-top: 1px;
+    margin-top: 0px;
   }
 
 
   .location-text {
-    margin-top: 8px;
+    margin-top: 6px;
 
     font-size: 10.25px;
 
@@ -780,9 +780,9 @@ svg {
   .location-red-line {
     margin-top:
       clamp(
-        2px,
+        0px,
         1.8dvh,
-        6px
+        4px
       );
   }
 
@@ -790,9 +790,9 @@ svg {
   .location-text {
     margin-top:
       clamp(
-        8px,
+        6px,
         1.4dvh,
-        11px
+        9px
       );
 
     font-size:
@@ -896,9 +896,9 @@ svg {
   .location-red-line {
     margin-top:
       clamp(
-        3px,
+        1px,
         2dvh,
-        7px
+        5px
       );
   }
 
@@ -906,9 +906,9 @@ svg {
   .location-text {
     margin-top:
       clamp(
-        9px,
+        7px,
         1.5dvh,
-        12px
+        10px
       );
 
     font-size:
@@ -1230,7 +1230,7 @@ svg {
 
 
   .location-text {
-    margin-top: 6px;
+    margin-top: 4px;
 
     font-size:
       clamp(
@@ -1313,7 +1313,7 @@ svg {
 
 
   .location-text {
-    margin-top: 4px;
+    margin-top: 2px;
 
     font-size:
       clamp(
