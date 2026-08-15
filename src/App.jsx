@@ -18,6 +18,10 @@ const MEMBERSHIP_URL =
   public/images/carousel-2.jpg
   public/images/carousel-3.jpg
   public/images/carousel-4.jpg
+  public/images/carousel-5.jpg
+  public/images/carousel-6.jpg
+  public/images/carousel-7.jpg
+  public/images/carousel-8.jpg
 
   You can add or remove image entries from this array at any time.
 */
@@ -26,6 +30,10 @@ const CAROUSEL_IMAGES = [
   `${import.meta.env.BASE_URL}images/carousel-2.jpg`,
   `${import.meta.env.BASE_URL}images/carousel-3.jpg`,
   `${import.meta.env.BASE_URL}images/carousel-4.jpg`,
+  `${import.meta.env.BASE_URL}images/carousel-5.jpg`,
+  `${import.meta.env.BASE_URL}images/carousel-6.jpg`,
+  `${import.meta.env.BASE_URL}images/carousel-7.jpg`,
+  `${import.meta.env.BASE_URL}images/carousel-8.jpg`,
 ];
 
 /*
