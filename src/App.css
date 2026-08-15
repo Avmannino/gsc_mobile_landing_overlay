@@ -298,7 +298,7 @@ svg {
 
   object-fit: contain;
 
-  transform: translate(-28px, -2px);
+  transform: translate(-28px, -1px);
 
   filter:
     drop-shadow(
@@ -575,7 +575,7 @@ svg {
     2px solid
     rgba(206, 221, 255, 0.72);
 
-  background: transparent;
+  background: var(--gsc-navy-deep);
 }
 
 
