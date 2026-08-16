@@ -253,7 +253,7 @@ svg {
   position: absolute;
   z-index: 3;
 
-  top: clamp(-55px, -6.9dvh, -46px);
+  top: clamp(-62px, -7.8dvh, -53px);
   left: 50%;
 
   display: grid;
@@ -322,7 +322,7 @@ svg {
   align-items: center;
   justify-content: center;
 
-  margin-top: 2px;
+  margin-top: 8px;
 }
 
 
@@ -370,7 +370,7 @@ svg {
   height: 3px;
 
   margin-top:
-    clamp(4px, 2.5dvh, 10px);
+    clamp(0px, 1.2dvh, 3px);
 
   border-radius: 999px;
 
@@ -657,7 +657,7 @@ svg {
 
 
   .identity-badge {
-    top: -40px;
+    top: -47px;
 
     width: 87px;
     height: 87px;
@@ -765,7 +765,7 @@ svg {
 
 
   .identity-badge {
-    top: -45px;
+    top: -52px;
 
     width:
       clamp(92px, 25vw, 101px);
@@ -785,8 +785,8 @@ svg {
     margin-top:
       clamp(
         0px,
-        1.8dvh,
-        4px
+        0.8dvh,
+        2px
       );
   }
 
@@ -881,7 +881,7 @@ svg {
 
 
   .identity-badge {
-    top: -48px;
+    top: -55px;
 
     width:
       clamp(99px, 25vw, 108px);
@@ -900,9 +900,9 @@ svg {
   .location-red-line {
     margin-top:
       clamp(
-        1px,
-        2dvh,
-        5px
+        0px,
+        1dvh,
+        2px
       );
   }
 
@@ -997,7 +997,7 @@ svg {
 
 
   .identity-badge {
-    top: -51px;
+    top: -58px;
 
     width:
       clamp(106px, 25vw, 117px);
@@ -1109,7 +1109,7 @@ svg {
 
 
   .identity-badge {
-    top: -55px;
+    top: -62px;
 
     width: 124px;
     height: 124px;
@@ -1212,7 +1212,7 @@ svg {
 
 
   .identity-badge {
-    top: -38px;
+    top: -45px;
 
     width: 83px;
     height: 83px;
@@ -1296,7 +1296,7 @@ svg {
 
 
   .identity-badge {
-    top: -32px;
+    top: -39px;
 
     width: 70px;
     height: 70px;
