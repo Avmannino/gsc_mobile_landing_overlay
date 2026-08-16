@@ -123,13 +123,13 @@ svg {
     linear-gradient(
       180deg,
       rgba(4, 20, 45, 0) 0%,
-      rgba(4, 20, 45, 0) 58.5%,
-      rgba(4, 20, 45, 0.05) 62%,
-      rgba(4, 20, 45, 0.16) 65%,
-      rgba(4, 20, 45, 0.38) 70%,
-      rgba(4, 20, 45, 0.66) 75%,
-      rgba(4, 20, 45, 0.86) 80%,
-      rgba(4, 20, 45, 0.96) 88.5%,
+      rgba(4, 20, 45, 0) 57.5%,
+      rgba(4, 20, 45, 0.05) 61%,
+      rgba(4, 20, 45, 0.16) 64%,
+      rgba(4, 20, 45, 0.38) 69%,
+      rgba(4, 20, 45, 0.66) 74.5%,
+      rgba(4, 20, 45, 0.86) 79.5%,
+      rgba(4, 20, 45, 0.96) 88%,
       rgba(4, 20, 45, 0.985) 100%
     );
 }
@@ -188,7 +188,7 @@ svg {
 
   transform:
     translateX(-50%)
-    translateY(-59px);
+    translateY(-69px);
 }
 
 
@@ -333,7 +333,7 @@ svg {
 .identity-text-block {
   display: flex;
 
-  width: min(100%, 260px);
+  width: min(100%, 275px);
   min-width: 0;
 
   flex-direction: column;
@@ -638,7 +638,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-43px);
+      translateY(-53px);
   }
 
 
@@ -666,7 +666,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 203px);
+      min(100%, 215px);
   }
 
 
@@ -743,7 +743,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-49px);
+      translateY(-59px);
   }
 
 
@@ -777,7 +777,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 221px);
+      min(100%, 234px);
   }
 
 
@@ -859,7 +859,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-53px);
+      translateY(-63px);
   }
 
 
@@ -893,7 +893,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 237px);
+      min(100%, 251px);
   }
 
 
@@ -975,7 +975,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-55px);
+      translateY(-65px);
   }
 
 
@@ -1009,7 +1009,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 254px);
+      min(100%, 269px);
   }
 
 
@@ -1079,7 +1079,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-57px);
+      translateY(-67px);
   }
 
 
@@ -1118,7 +1118,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 277px);
+      min(100%, 293px);
   }
 
 
@@ -1167,11 +1167,11 @@ svg {
       linear-gradient(
         180deg,
         rgba(4, 20, 45, 0) 0%,
-        rgba(4, 20, 45, 0) 55%,
-        rgba(4, 20, 45, 0.1) 60%,
-        rgba(4, 20, 45, 0.42) 67%,
-        rgba(4, 20, 45, 0.76) 74%,
-        rgba(4, 20, 45, 0.94) 82.5%,
+        rgba(4, 20, 45, 0) 53.5%,
+        rgba(4, 20, 45, 0.1) 59%,
+        rgba(4, 20, 45, 0.42) 66%,
+        rgba(4, 20, 45, 0.76) 73%,
+        rgba(4, 20, 45, 0.94) 82%,
         rgba(4, 20, 45, 0.985) 100%
       );
   }
@@ -1188,7 +1188,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-41px);
+      translateY(-51px);
   }
 
 
@@ -1221,7 +1221,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 198px);
+      min(100%, 210px);
   }
 
 
@@ -1272,7 +1272,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-35px);
+      translateY(-45px);
   }
 
 
@@ -1305,7 +1305,7 @@ svg {
 
   .identity-text-block {
     width:
-      min(100%, 176px);
+      min(100%, 186px);
   }
 
 
