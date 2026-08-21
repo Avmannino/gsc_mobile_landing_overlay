@@ -188,7 +188,7 @@ svg {
   gap: clamp(18px, 2.5dvh, 22px);
 
   transform:
-    translateX(-50%) translateY(-101px);
+    translateX(-50%) translateY(-86px);
 }
 
 
@@ -653,7 +653,7 @@ svg {
     gap: 14px;
 
     transform:
-      translateX(-50%) translateY(-85px);
+      translateX(-50%) translateY(-70px);
   }
 
 
@@ -736,7 +736,7 @@ svg {
         18px);
 
     transform:
-      translateX(-50%) translateY(-91px);
+      translateX(-50%) translateY(-76px);
   }
 
 
@@ -821,7 +821,7 @@ svg {
         19px);
 
     transform:
-      translateX(-50%) translateY(-95px);
+      translateX(-50%) translateY(-80px);
   }
 
 
@@ -906,7 +906,7 @@ svg {
         20px);
 
     transform:
-      translateX(-50%) translateY(-97px);
+      translateX(-50%) translateY(-82px);
   }
 
 
@@ -989,7 +989,7 @@ svg {
         22px);
 
     transform:
-      translateX(-50%) translateY(-99px);
+      translateX(-50%) translateY(-84px);
   }
 
 
@@ -1077,7 +1077,7 @@ svg {
     gap: 13px;
 
     transform:
-      translateX(-50%) translateY(-83px);
+      translateX(-50%) translateY(-68px);
   }
 
 
@@ -1142,7 +1142,7 @@ svg {
     gap: 10px;
 
     transform:
-      translateX(-50%) translateY(-77px);
+      translateX(-50%) translateY(-62px);
   }
 
 
@@ -1799,7 +1799,7 @@ svg {
     font-weight: 200;
 
     font-size:
-      clamp(16px, 3.8vw, 20px);
+      clamp(15px, 3.6vw, 19px);
 
     letter-spacing:
       clamp(0.05em, 0.2vw, 0.09em);
