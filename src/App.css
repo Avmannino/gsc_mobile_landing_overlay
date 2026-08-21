@@ -1429,7 +1429,8 @@ svg {
   align-self: end;
 
   width:
-    clamp(14px, 3.2vw, 18px);
+    clamp(14px, 3.8vw, 19px);
+
   height: auto;
 
   margin-bottom: -2px;
