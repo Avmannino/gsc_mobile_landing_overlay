@@ -195,8 +195,14 @@ svg {
 /* =========================================================
    IDENTITY CARD
 
-   Narrow vertical outlined card.
-   No glass background.
+   The actual layout box is intentionally left untouched.
+
+   The visible card shell is now drawn with ::before and
+   begins 40px below the original top edge. This makes the
+   visible identity card 40px shorter while keeping all
+   existing content in its original position.
+
+   The circle logo can therefore overflow above the border.
 ========================================================= */
 
 .identity-card {
@@ -223,12 +229,38 @@ svg {
 
   overflow: visible;
 
+  border: 0;
+
+  border-radius:
+    clamp(18px, 5vw, 26px);
+
+  background: transparent;
+
+  box-shadow: none;
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  transform: translateZ(0);
+}
+
+
+.identity-card::before {
+  position: absolute;
+  z-index: 0;
+
+  top: 40px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  content: "";
+
   border:
     1.15px solid
     rgba(255, 255, 255, 0.55);
 
-  border-radius:
-    clamp(18px, 5vw, 26px);
+  border-radius: inherit;
 
   background: transparent;
 
@@ -239,7 +271,7 @@ svg {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 
-  transform: translateZ(0);
+  pointer-events: none;
 }
 
 
@@ -313,6 +345,9 @@ svg {
 ========================================================= */
 
 .identity-content {
+  position: relative;
+  z-index: 1;
+
   display: flex;
 
   width: 100%;
@@ -386,6 +421,8 @@ svg {
 
 /* =========================================================
    RED DIVIDER LINE
+
+   Reduced by 5px from the previous spacing.
 ========================================================= */
 
 .location-red-line {
@@ -394,7 +431,7 @@ svg {
   width: clamp(52px, 15vw, 72px);
   height: 3px;
 
-  margin-top: 12px;
+  margin-top: 7px;
 
   border-radius: 999px;
 
@@ -698,7 +735,7 @@ svg {
     width: 22px;
     height: 2px;
 
-    margin-top: 16px;
+    margin-top: 11px;
   }
 
 
@@ -806,7 +843,7 @@ svg {
 
 
   .location-red-line {
-    margin-top: 14px;
+    margin-top: 9px;
   }
 
 
@@ -917,7 +954,7 @@ svg {
 
 
   .location-red-line {
-    margin-top: 12px;
+    margin-top: 7px;
   }
 
 
@@ -1243,7 +1280,7 @@ svg {
     width: 42px;
     height: 2px;
 
-    margin-top: 18px;
+    margin-top: 13px;
   }
 
 
@@ -1326,7 +1363,7 @@ svg {
   .location-red-line {
     width: 36px;
 
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
 
