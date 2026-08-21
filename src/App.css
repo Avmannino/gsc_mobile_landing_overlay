@@ -219,7 +219,7 @@ svg {
   padding:
     4px
     clamp(20px, 5vw, 30px)
-    clamp(20px, 2.9dvh, 27px);
+    clamp(16px, 2.3dvh, 22px);
 
   overflow: visible;
 
@@ -372,7 +372,9 @@ svg {
 
   object-fit: contain;
 
-  transform: translate(-12px, -30px);
+  margin-bottom: -60px;
+
+  transform: translate(-12px, -73px);
 
   filter:
     drop-shadow(
@@ -392,7 +394,7 @@ svg {
   width: clamp(52px, 15vw, 72px);
   height: 3px;
 
-  margin-top: -18px;
+  margin-top: 12px;
 
   border-radius: 999px;
 
@@ -696,7 +698,7 @@ svg {
     width: 22px;
     height: 2px;
 
-    margin-top: -14px;
+    margin-top: 16px;
   }
 
 
@@ -804,7 +806,7 @@ svg {
 
 
   .location-red-line {
-    margin-top: -16px;
+    margin-top: 14px;
   }
 
 
@@ -915,7 +917,7 @@ svg {
 
 
   .location-red-line {
-    margin-top: -18px;
+    margin-top: 12px;
   }
 
 
@@ -1241,7 +1243,7 @@ svg {
     width: 42px;
     height: 2px;
 
-    margin-top: -12px;
+    margin-top: 18px;
   }
 
 
@@ -1324,7 +1326,7 @@ svg {
   .location-red-line {
     width: 36px;
 
-    margin-top: -10px;
+    margin-top: 20px;
   }
 
 
