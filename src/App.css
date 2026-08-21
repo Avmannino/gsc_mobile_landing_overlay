@@ -1525,7 +1525,10 @@ svg {
     clamp(20px, 6vw, 32px);
 
   pointer-events: none;
+
+  transform: translateY(-12px);
 }
+
 
 
 .identity-founded-row {
