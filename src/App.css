@@ -616,9 +616,10 @@ svg {
 .overlay-button--primary {
   border:
     2px solid
-    #e51837;
+    #d71933;
 
-  background: #e51837;
+  background: #d71933 !important;
+  background-color: #d71933 !important;
 }
 
 
@@ -628,11 +629,10 @@ svg {
 ========================================================= */
 
 .overlay-button--secondary {
-  border:
-    2px solid
-    rgba(206, 221, 255, 0.72);
+  border: 0;
 
-  background: var(--gsc-navy-deep);
+  background: #00329d !important;
+  background-color: #00329d !important;
 }
 
 
@@ -641,26 +641,12 @@ svg {
    UNCHANGED
 ========================================================= */
 
-.overlay-button:hover,
 .overlay-button:focus-visible {
-  outline: none;
+  outline:
+    2px solid
+    rgba(255, 255, 255, 0.95);
 
-  transform: translateY(-2px);
-}
-
-
-.overlay-button--primary:hover,
-.overlay-button--primary:focus-visible {
-  background: rgba(229, 24, 55, 0.1);
-}
-
-
-.overlay-button--secondary:hover,
-.overlay-button--secondary:focus-visible {
-  border-color:
-    rgba(255, 255, 255, 0.94);
-
-  background: rgba(16, 46, 116, 0.18);
+  outline-offset: 3px;
 }
 
 
