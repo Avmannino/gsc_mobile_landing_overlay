@@ -41,6 +41,7 @@ function App() {
         aria-label="Greenwich Skating Club"
       >
         <div className="identity-card">
+          {/* OLD DESIGN — circle badge + G logo. Uncomment to restore.
           <div
             className="identity-badge"
             aria-hidden="true"
@@ -51,12 +52,21 @@ function App() {
               alt=""
             />
           </div>
+          */}
 
           <div className="identity-content">
             <div className="identity-text-block">
+              {/* OLD DESIGN — text wordmark. Uncomment to restore.
               <img
                 className="identity-wordmark"
                 src={`${import.meta.env.BASE_URL}gsc-text.png`}
+                alt="Greenwich Skating Club"
+              />
+              */}
+
+              <img
+                className="identity-circle-logo"
+                src={`${import.meta.env.BASE_URL}gsc-circle-logo.png`}
                 alt="Greenwich Skating Club"
               />
 

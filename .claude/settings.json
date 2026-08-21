@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m ' *)",
+      "Bash(python3 -c \"import PIL; print\\(PIL.__version__\\)\")",
+      "Bash(python3)",
+      "Bash(git log *)",
+      "Bash(pkill -f \"vite --port\")",
+      "Bash(node -e ' *)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5199/gsc_mobile_landing_overlay/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5199/gsc_mobile_landing_overlay/)",
+      "Bash(git fetch *)",
+      "Bash(curl -s -D - -o /tmp/live_index.html https://avmannino.github.io/gsc_mobile_landing_overlay/)",
+      "Bash(git ls-tree *)",
+      "Bash(cd /home/avmannino/development/code/projects/gsc/gsc_mobile_landing_overlay *)",
+      "Bash(curl -s \"https://avmannino.github.io/gsc_mobile_landing_overlay/\")",
+      "Bash(python3 -c ' *)",
+      "Bash(git commit *)"
+    ],
+    "additionalDirectories": [
+      "/home/avmannino/development/code/projects/gsc/gsc_mobile_landing_overlay/public",
+      "/home/avmannino/development/code/projects/gsc/gsc_mobile_landing_overlay/public/fonts"
+    ]
+  }
+}
