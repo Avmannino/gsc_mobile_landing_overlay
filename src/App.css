@@ -1361,7 +1361,7 @@ svg {
   align-items: end;
 
   column-gap:
-    clamp(10px, 3vw, 15px);
+    clamp(4px, 1.2vw, 6px);
 }
 
 
@@ -1426,7 +1426,7 @@ svg {
   align-self: end;
 
   width:
-    clamp(8px, 2.2vw, 11px);
+    clamp(11px, 3vw, 15px);
   height: auto;
 
   margin-bottom: -2px;
@@ -1507,7 +1507,7 @@ svg {
   .identity-founded-row {
     width: 84%;
 
-    column-gap: 9px;
+    column-gap: 4px;
   }
 
 
@@ -1519,7 +1519,7 @@ svg {
   .identity-founded-star {
     margin-bottom: -5px;
 
-    width: 8px;
+    width: 11px;
   }
 
 
@@ -1693,7 +1693,7 @@ svg {
     margin-bottom: -5px;
 
     width:
-      clamp(7px, 1.8vw, 9px);
+      clamp(10px, 2.4vw, 13px);
   }
 
 
@@ -1733,7 +1733,7 @@ svg {
   .identity-founded-row {
     width: 84%;
 
-    column-gap: 8px;
+    column-gap: 4px;
   }
 
 
@@ -1754,7 +1754,7 @@ svg {
     margin-bottom: -4px;
 
     width:
-      clamp(6px, 1.6vw, 8px);
+      clamp(9px, 2.1vw, 11px);
   }
 
 
