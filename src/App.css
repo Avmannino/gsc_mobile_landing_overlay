@@ -183,7 +183,7 @@ svg {
   gap: clamp(18px, 2.5dvh, 22px);
 
   transform:
-    translateX(-50%) translateY(-122px);
+    translateX(-50%) translateY(-114px);
 }
 
 
@@ -470,7 +470,7 @@ svg {
 .overlay-buttons .overlay-address {
   justify-self: center;
 
-  margin-top: 2px;
+  margin-top: 4px;
 
   color:
     rgba(255, 255, 255, 0.58);
@@ -645,7 +645,7 @@ svg {
     gap: 14px;
 
     transform:
-      translateX(-50%) translateY(-106px);
+      translateX(-50%) translateY(-98px);
   }
 
 
@@ -728,7 +728,7 @@ svg {
         18px);
 
     transform:
-      translateX(-50%) translateY(-112px);
+      translateX(-50%) translateY(-104px);
   }
 
 
@@ -813,7 +813,7 @@ svg {
         19px);
 
     transform:
-      translateX(-50%) translateY(-116px);
+      translateX(-50%) translateY(-108px);
   }
 
 
@@ -898,7 +898,7 @@ svg {
         20px);
 
     transform:
-      translateX(-50%) translateY(-118px);
+      translateX(-50%) translateY(-110px);
   }
 
 
@@ -981,7 +981,7 @@ svg {
         22px);
 
     transform:
-      translateX(-50%) translateY(-120px);
+      translateX(-50%) translateY(-112px);
   }
 
 
@@ -1069,7 +1069,7 @@ svg {
     gap: 13px;
 
     transform:
-      translateX(-50%) translateY(-104px);
+      translateX(-50%) translateY(-96px);
   }
 
 
@@ -1134,7 +1134,7 @@ svg {
     gap: 10px;
 
     transform:
-      translateX(-50%) translateY(-98px);
+      translateX(-50%) translateY(-90px);
   }
 
 
