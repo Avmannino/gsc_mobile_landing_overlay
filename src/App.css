@@ -188,7 +188,7 @@ svg {
   gap: clamp(18px, 2.5dvh, 22px);
 
   transform:
-    translateX(-50%) translateY(-86px);
+    translateX(-50%) translateY(-93px);
 }
 
 
@@ -653,7 +653,7 @@ svg {
     gap: 14px;
 
     transform:
-      translateX(-50%) translateY(-70px);
+      translateX(-50%) translateY(-77px);
   }
 
 
@@ -736,7 +736,7 @@ svg {
         18px);
 
     transform:
-      translateX(-50%) translateY(-76px);
+      translateX(-50%) translateY(-83px);
   }
 
 
@@ -821,7 +821,7 @@ svg {
         19px);
 
     transform:
-      translateX(-50%) translateY(-80px);
+      translateX(-50%) translateY(-87px);
   }
 
 
@@ -906,7 +906,7 @@ svg {
         20px);
 
     transform:
-      translateX(-50%) translateY(-82px);
+      translateX(-50%) translateY(-89px);
   }
 
 
@@ -989,7 +989,7 @@ svg {
         22px);
 
     transform:
-      translateX(-50%) translateY(-84px);
+      translateX(-50%) translateY(-91px);
   }
 
 
@@ -1076,7 +1076,7 @@ svg {
     gap: 13px;
 
     transform:
-      translateX(-50%) translateY(-68px);
+      translateX(-50%) translateY(-75px);
   }
 
 
@@ -1141,7 +1141,7 @@ svg {
     gap: 10px;
 
     transform:
-      translateX(-50%) translateY(-62px);
+      translateX(-50%) translateY(-69px);
   }
 
 
