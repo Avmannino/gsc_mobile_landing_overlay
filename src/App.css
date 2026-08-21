@@ -188,7 +188,7 @@ svg {
 
   transform:
     translateX(-50%)
-    translateY(-124px);
+    translateY(-164px);
 }
 
 
@@ -372,9 +372,9 @@ svg {
 
   object-fit: contain;
 
-  margin-bottom: -60px;
+  margin-bottom: -100px;
 
-  transform: translate(-12px, -73px);
+  transform: translate(-12px, -113px);
 
   filter:
     drop-shadow(
@@ -662,7 +662,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-108px);
+      translateY(-148px);
   }
 
 
@@ -767,7 +767,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-114px);
+      translateY(-154px);
   }
 
 
@@ -878,7 +878,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-118px);
+      translateY(-158px);
   }
 
 
@@ -989,7 +989,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-120px);
+      translateY(-160px);
   }
 
 
@@ -1093,7 +1093,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-122px);
+      translateY(-162px);
   }
 
 
@@ -1202,7 +1202,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-106px);
+      translateY(-146px);
   }
 
 
@@ -1286,7 +1286,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-100px);
+      translateY(-140px);
   }
 
 
