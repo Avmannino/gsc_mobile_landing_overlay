@@ -461,7 +461,7 @@ svg {
 .overlay-buttons {
   display: grid;
 
-  width: min(84%, 345px);
+  width: min(79.8%, 327.75px);
   min-width: 0;
 
   grid-template-columns:
@@ -693,7 +693,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 84%;
+    width: 79.8%;
 
     gap: 8px;
   }
@@ -751,7 +751,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 83%;
+    width: 78.85%;
   }
 
 
@@ -836,7 +836,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 82%;
+    width: 77.9%;
   }
 
 
@@ -921,7 +921,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 92%;
+    width: 87.4%;
   }
 
 
@@ -1007,8 +1007,7 @@ svg {
 
   .overlay-buttons {
     width:
-      min(78%,
-        360px);
+      min(74.1%, 342px);
   }
 
 
@@ -1094,7 +1093,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 75%;
+    width: 71.25%;
   }
 
 
@@ -1159,7 +1158,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 73%;
+    width: 69.35%;
   }
 
 
@@ -1261,7 +1260,8 @@ svg {
     linear-gradient(180deg,
       rgba(245, 249, 253, 0.24) 0%,
       rgba(220, 229, 239, 0.20) 42%,
-      rgba(139, 157, 179, 0.23) 100%);
+      rgba(139, 157, 179, 0.24) 70%,
+      rgba(8, 28, 56, 0.34) 100%);
 
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.18),
@@ -1299,7 +1299,7 @@ svg {
     linear-gradient(180deg,
       rgba(255, 255, 255, 0.1) 0%,
       rgba(255, 255, 255, 0.025) 42%,
-      rgba(5, 23, 49, 0.07) 100%);
+      rgba(5, 23, 49, 0.14) 100%);
 
   pointer-events: none;
 }
