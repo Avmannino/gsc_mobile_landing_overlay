@@ -13,6 +13,11 @@
 
   --gsc-white: #ffffff;
 
+  /* Future identity-card height reduction.
+     0px = current card height.
+     Increase this value to remove height from the TOP only. */
+  --identity-card-height-reduction: 0px;
+
   font-family:
     "Montserrat",
     Arial,
@@ -1241,7 +1246,7 @@ svg {
   position: absolute;
   z-index: 0;
 
-  top: 0;
+  top: var(--identity-card-height-reduction, 0px);
   right: 0;
   bottom: 20px;
   left: 0;
@@ -1280,7 +1285,7 @@ svg {
   position: absolute;
   z-index: 1;
 
-  top: 12px;
+  top: calc(12px + var(--identity-card-height-reduction, 0px));
   right: 4px;
   bottom: 12px;
   left: 4px;
@@ -1767,24 +1772,20 @@ svg {
 
 
 /* =========================================================
-   FINAL MOBILE CARD-TO-BUTTON GAP
-   Placed after all mobile breakpoint rules so it wins.
-========================================================= */
-
-@media (max-width: 767px) {
-  .overlay-content {
-    gap: 10px;
-  }
-}
-
-
-/* =========================================================
    FINAL MOBILE BUTTON TYPOGRAPHY
    Placed after all mobile breakpoint rules so it wins.
 ========================================================= */
 
 @media (max-width: 767px) {
   .overlay-button {
+    font-family:
+      "Microgramma Extend Medium",
+      Arial,
+      Helvetica,
+      sans-serif;
+
+    font-weight: 200;
+
     font-size:
       clamp(16px, 3.8vw, 20px);
 
