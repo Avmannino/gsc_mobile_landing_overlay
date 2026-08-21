@@ -246,7 +246,7 @@ svg {
   position: absolute;
   z-index: 0;
 
-  top: 20px;
+  top: 5px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -371,7 +371,7 @@ svg {
   flex-direction: column;
   align-items: center;
 
-  transform: translateY(25px);
+  transform: translateY(20px);
 }
 
 
@@ -406,7 +406,7 @@ svg {
 
   margin-bottom: -100px;
 
-  transform: translate(-12px, -113px);
+  transform: translate(-12px, -108px);
 
   filter:
     drop-shadow(
@@ -489,7 +489,7 @@ svg {
 
   gap: clamp(10px, 1.7dvh, 14px);
 
-  margin: 10px auto 0;
+  margin: 20px auto 0;
   padding: 0;
 }
 

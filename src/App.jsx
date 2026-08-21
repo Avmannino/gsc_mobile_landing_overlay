@@ -97,7 +97,21 @@ function App() {
           </a>
 
           <span className="location-text overlay-address">
-            11 Cardinal Rd. Greenwich, CT
+            <svg
+              className="location-pin-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"
+              />
+            </svg>
+
+            <span>
+              11 Cardinal Rd. Greenwich, CT
+            </span>
           </span>
         </div>
       </section>
