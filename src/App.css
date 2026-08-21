@@ -368,7 +368,7 @@ svg {
   flex-direction: column;
   align-items: center;
 
-  transform: translateY(20px);
+  transform: translateY(10px);
 }
 
 
@@ -456,7 +456,7 @@ svg {
     clamp(10px, 2dvh, 15px);
 
   color:
-    rgba(235, 240, 249, 0.9);
+    rgba(7, 27, 59, 0.88);
 
   font-family:
     "Oswald",
@@ -471,7 +471,7 @@ svg {
   font-size:
     clamp(13px, 3.3vw, 16.5px);
 
-  font-weight: 200;
+  font-weight: 400;
 
   letter-spacing:
     clamp(
@@ -488,8 +488,8 @@ svg {
   white-space: nowrap;
 
   text-shadow:
-    0 1px 3px
-    rgba(0, 0, 0, 0.22);
+    0 1px 2px
+    rgba(255, 255, 255, 0.5);
 }
 
 
@@ -576,8 +576,8 @@ svg {
   text-transform: uppercase;
 
   box-shadow:
-    0 6px 14px
-    rgba(0, 0, 0, 0.25);
+    0 9px 20px
+    rgba(0, 0, 0, 0.34);
 
   transform: translateZ(0);
 
@@ -629,7 +629,9 @@ svg {
 ========================================================= */
 
 .overlay-button--secondary {
-  border: 0;
+  border:
+    2px solid
+    rgba(206, 221, 255, 0.72);
 
   background: #00329d !important;
   background-color: #00329d !important;
