@@ -20,8 +20,8 @@
     sans-serif;
 
   color: var(--gsc-white);
-  /* background: transparent; */
-  background: black !important;
+  background: transparent;
+  /* background: black !important; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
