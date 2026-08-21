@@ -110,7 +110,7 @@ function App() {
             </svg>
 
             <span>
-              11 Cardinal Rd. Greenwich, CT
+              11 Cardinal Rd. Greenwich, CT 06830
             </span>
           </span>
         </div>
