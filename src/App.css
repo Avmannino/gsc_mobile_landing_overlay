@@ -197,12 +197,10 @@ svg {
 
    The actual layout box is intentionally left untouched.
 
-   The visible card shell is now drawn with ::before and
-   begins 40px below the original top edge. This makes the
-   visible identity card 40px shorter while keeping all
-   existing content in its original position.
-
-   The circle logo can therefore overflow above the border.
+   The visible card shell is drawn with ::before and begins
+   40px below the original top edge. This makes the visible
+   card 40px shorter from the top while allowing the logo
+   to overflow above the border.
 ========================================================= */
 
 .identity-card {
@@ -277,8 +275,6 @@ svg {
 
 /* =========================================================
    CIRCULAR TOP BADGE
-
-   Overlaps the identity card border.
 ========================================================= */
 
 .identity-badge {
@@ -363,6 +359,9 @@ svg {
 
 /* =========================================================
    TEXT BLOCK
+
+   Entire logo / divider / address group moved DOWN 20px.
+   Previous value: translateY(-10px)
 ========================================================= */
 
 .identity-text-block {
@@ -374,7 +373,7 @@ svg {
   flex-direction: column;
   align-items: center;
 
-  transform: translateY(-10px);
+  transform: translateY(10px);
 }
 
 
@@ -398,7 +397,6 @@ svg {
 
 /* =========================================================
    NEW DESIGN TEST — all-in-one circle logo
-   Sits where the wordmark used to sit.
 ========================================================= */
 
 .identity-circle-logo {
@@ -422,7 +420,7 @@ svg {
 /* =========================================================
    RED DIVIDER LINE
 
-   Reduced by 5px from the previous spacing.
+   Another 2px reduction in logo-to-divider spacing.
 ========================================================= */
 
 .location-red-line {
@@ -431,7 +429,7 @@ svg {
   width: clamp(52px, 15vw, 72px);
   height: 3px;
 
-  margin-top: 7px;
+  margin-top: 5px;
 
   border-radius: 999px;
 
@@ -503,9 +501,6 @@ svg {
 
 /* =========================================================
    BUTTON LAYOUT
-
-   Button DESIGN remains the same.
-   Only changed to a stacked layout.
 ========================================================= */
 
 .overlay-buttons {
@@ -526,7 +521,6 @@ svg {
 
 /* =========================================================
    BUTTON BASE
-   DESIGN UNCHANGED
 ========================================================= */
 
 .overlay-button {
@@ -618,7 +612,6 @@ svg {
 
 /* =========================================================
    CROSSBAR LOGIN
-   UNCHANGED
 ========================================================= */
 
 .overlay-button--primary {
@@ -632,7 +625,6 @@ svg {
 
 /* =========================================================
    MEMBERSHIPS
-   UNCHANGED
 ========================================================= */
 
 .overlay-button--secondary {
@@ -646,7 +638,6 @@ svg {
 
 /* =========================================================
    BUTTON INTERACTION
-   UNCHANGED
 ========================================================= */
 
 .overlay-button:hover,
@@ -735,7 +726,7 @@ svg {
     width: 22px;
     height: 2px;
 
-    margin-top: 11px;
+    margin-top: 9px;
   }
 
 
@@ -843,7 +834,7 @@ svg {
 
 
   .location-red-line {
-    margin-top: 9px;
+    margin-top: 7px;
   }
 
 
@@ -954,7 +945,7 @@ svg {
 
 
   .location-red-line {
-    margin-top: 7px;
+    margin-top: 5px;
   }
 
 
@@ -1089,8 +1080,6 @@ svg {
         22.5px
       );
   }
-
-
 }
 
 
@@ -1203,8 +1192,6 @@ svg {
 
 /* =========================================================
    SHORT MOBILE SCREENS
-
-   CURRENT GRADIENT VALUES PRESERVED
 ========================================================= */
 
 @media (
@@ -1280,7 +1267,7 @@ svg {
     width: 42px;
     height: 2px;
 
-    margin-top: 13px;
+    margin-top: 11px;
   }
 
 
@@ -1363,7 +1350,7 @@ svg {
   .location-red-line {
     width: 36px;
 
-    margin-top: 15px;
+    margin-top: 13px;
   }
 
 
