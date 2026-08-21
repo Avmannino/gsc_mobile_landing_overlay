@@ -74,12 +74,12 @@ function App() {
                 />
               </div>
 
-              <span
+              <img
                 className="identity-founded-star"
+                src={`${import.meta.env.BASE_URL}star.png`}
+                alt=""
                 aria-hidden="true"
-              >
-                ★
-              </span>
+              />
 
               <div className="identity-founded-side">
                 <img
