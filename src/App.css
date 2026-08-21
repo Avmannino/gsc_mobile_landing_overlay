@@ -1772,6 +1772,18 @@ svg {
 
 
 /* =========================================================
+   FINAL MOBILE CARD-TO-BUTTON GAP
+   Keeps the identity card group close to the first button.
+========================================================= */
+
+@media (max-width: 767px) {
+  .overlay-content {
+    gap: 6px;
+  }
+}
+
+
+/* =========================================================
    FINAL MOBILE BUTTON TYPOGRAPHY
    Placed after all mobile breakpoint rules so it wins.
 ========================================================= */
