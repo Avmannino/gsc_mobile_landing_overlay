@@ -115,7 +115,10 @@ svg {
   position: absolute;
   z-index: 0;
 
-  inset: 0;
+  top: -10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
   pointer-events: none;
 
@@ -188,7 +191,7 @@ svg {
 
   transform:
     translateX(-50%)
-    translateY(-144px);
+    translateY(-134px);
 }
 
 
@@ -243,7 +246,7 @@ svg {
   position: absolute;
   z-index: 0;
 
-  top: 65px;
+  top: 50px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -368,7 +371,7 @@ svg {
   flex-direction: column;
   align-items: center;
 
-  transform: translateY(35px);
+  transform: translateY(20px);
 }
 
 
@@ -498,7 +501,10 @@ svg {
   font-weight: 200;
 
   opacity: 1;
+
+  transform: translateY(10px);
 }
+
 
 
 /* =========================================================
@@ -662,7 +668,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-128px);
+      translateY(-118px);
   }
 
 
@@ -759,7 +765,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-134px);
+      translateY(-124px);
   }
 
 
@@ -865,7 +871,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-138px);
+      translateY(-128px);
   }
 
 
@@ -971,7 +977,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-140px);
+      translateY(-130px);
   }
 
 
@@ -1075,7 +1081,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-142px);
+      translateY(-132px);
   }
 
 
@@ -1184,7 +1190,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-126px);
+      translateY(-116px);
   }
 
 
@@ -1260,7 +1266,7 @@ svg {
 
     transform:
       translateX(-50%)
-      translateY(-120px);
+      translateY(-110px);
   }
 
 
