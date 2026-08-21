@@ -87,7 +87,7 @@ function App() {
             </div>
 
             <div className="identity-city">
-              Greenwich, Connecticut
+              Greenwich, CT
             </div>
           </div>
         </div>
