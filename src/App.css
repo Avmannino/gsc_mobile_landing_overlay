@@ -20,7 +20,8 @@
     sans-serif;
 
   color: var(--gsc-white);
-  background: transparent;
+  /* background: transparent; */
+  background: black !important;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -1398,7 +1399,7 @@ svg {
 
   top: 0;
   right: 0;
-  bottom: 8px;
+  bottom: 15px;
   left: 0;
 
   content: "";
@@ -1480,7 +1481,7 @@ svg {
   position: absolute;
   z-index: 4;
 
-  top: -15%;
+  top: -18%;
   left: 50%;
 
   width: 66%;
