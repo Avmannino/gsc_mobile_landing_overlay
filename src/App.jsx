@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 
 const LOGIN_URL =
@@ -7,6 +8,24 @@ const MEMBERSHIP_URL =
   "https://wingsarenact.wixstudio.com/gscnewsite/admissions";
 
 function App() {
+  useEffect(() => {
+    // Safari/iOS can restore this page from the back/forward cache after
+    // the buttons navigate the top-level frame away and the user swipes
+    // back. A bfcache-restored page can end up unresponsive to touch, so
+    // force a fresh reload when that happens.
+    const handlePageShow = (event) => {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    };
+
+    window.addEventListener("pageshow", handlePageShow);
+
+    return () => {
+      window.removeEventListener("pageshow", handlePageShow);
+    };
+  }, []);
+
   return (
     <main className="mobile-landing-overlay">
       <style>
