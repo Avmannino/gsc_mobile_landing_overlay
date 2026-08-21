@@ -1350,6 +1350,677 @@ svg {
 }
 
 
+
+
+/* =========================================================
+   IDENTITY CARD — REFERENCE IMAGE REDESIGN
+   Only the identity card and its internal elements are changed.
+========================================================= */
+
+.identity-card {
+  position: relative;
+  isolation: isolate;
+
+  display: block;
+
+  width: min(84%, 345px);
+  min-width: 0;
+
+  aspect-ratio: 1.43 / 1;
+
+  align-self: center;
+
+  margin-top:
+    clamp(38px, 5.5dvh, 52px);
+
+  padding: 0;
+
+  overflow: visible;
+
+  border: 0;
+  border-radius:
+    clamp(24px, 7vw, 34px);
+
+  background: transparent;
+
+  box-shadow: none;
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  transform: translateZ(0);
+}
+
+
+.identity-card::before {
+  position: absolute;
+  z-index: 0;
+
+  inset: 0;
+
+  content: "";
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.9);
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(245, 249, 253, 0.24) 0%,
+      rgba(220, 229, 239, 0.20) 42%,
+      rgba(139, 157, 179, 0.23) 100%
+    );
+
+  box-shadow:
+    0 0 0 1px
+    rgba(255, 255, 255, 0.18),
+    0 0 16px
+    rgba(255, 255, 255, 0.72),
+    0 0 28px
+    rgba(255, 255, 255, 0.28),
+    0 18px 34px
+    rgba(0, 12, 32, 0.3),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.72),
+    inset 0 -20px 34px
+    rgba(8, 28, 56, 0.12);
+
+  backdrop-filter:
+    blur(16px)
+    saturate(118%);
+
+  -webkit-backdrop-filter:
+    blur(16px)
+    saturate(118%);
+
+  pointer-events: none;
+}
+
+
+.identity-card::after {
+  position: absolute;
+  z-index: 1;
+
+  inset: 4px;
+
+  content: "";
+
+  border-radius:
+    calc(
+      clamp(24px, 7vw, 34px)
+      - 4px
+    );
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.025) 42%,
+      rgba(5, 23, 49, 0.07) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+.identity-content,
+.identity-text-block {
+  display: contents;
+}
+
+
+.identity-circle-logo {
+  position: absolute;
+  z-index: 4;
+
+  top: -15%;
+  left: 50%;
+
+  width: 66%;
+  height: auto;
+
+  max-width: none;
+
+  margin: 0;
+
+  object-fit: contain;
+
+  transform: translateX(-50%);
+
+  filter:
+    drop-shadow(
+      0 0 2px
+      rgba(255, 255, 255, 0.95)
+    )
+    drop-shadow(
+      0 0 8px
+      rgba(255, 255, 255, 0.62)
+    )
+    drop-shadow(
+      0 9px 12px
+      rgba(0, 8, 28, 0.3)
+    );
+}
+
+
+.identity-details {
+  position: absolute;
+  z-index: 3;
+
+  right: 0;
+  bottom:
+    clamp(16px, 4.4vw, 23px);
+  left: 0;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  padding:
+    0
+    clamp(20px, 6vw, 32px);
+
+  pointer-events: none;
+}
+
+
+.identity-founded-row {
+  display: grid;
+
+  width: 82%;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+
+  align-items: end;
+
+  column-gap:
+    clamp(10px, 3vw, 15px);
+}
+
+
+.identity-founded-side {
+  display: flex;
+
+  min-width: 0;
+
+  flex-direction: column;
+  align-items: center;
+
+  gap:
+    clamp(5px, 1.4vw, 7px);
+}
+
+
+.identity-founded-art {
+  display: block;
+
+  width: auto;
+  height:
+    clamp(15px, 4vw, 20px);
+
+  max-width: 90%;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 1px 2px
+      rgba(0, 0, 0, 0.28)
+    );
+}
+
+
+.identity-founded-art--est {
+  max-width: 72%;
+}
+
+
+.identity-founded-art--year {
+  max-width: 68%;
+}
+
+
+.identity-founded-line {
+  display: block;
+
+  width: 100%;
+  height: 1.5px;
+
+  background:
+    rgba(229, 24, 55, 0.88);
+
+  box-shadow:
+    0 0 6px
+    rgba(229, 24, 55, 0.2);
+}
+
+
+.identity-founded-star {
+  display: block;
+
+  align-self: end;
+
+  margin-bottom: -6px;
+
+  color: #e51837;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(17px, 5vw, 23px);
+
+  line-height: 1;
+
+  text-shadow:
+    0 0 7px
+    rgba(229, 24, 55, 0.22);
+
+  transform: translateY(1px);
+}
+
+
+.identity-city {
+  margin-top:
+    clamp(12px, 3.2vw, 17px);
+
+  color:
+    rgba(255, 255, 255, 0.95);
+
+  font-family:
+    "Oswald Medium",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(11px, 2.9vw, 14px);
+
+  font-weight: 500;
+
+  letter-spacing:
+    clamp(
+      0.14em,
+      0.58vw,
+      0.22em
+    );
+
+  line-height: 1;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 1px 3px
+    rgba(0, 0, 0, 0.38);
+}
+
+
+/* 320px - 359px */
+@media (max-width: 359px) {
+
+  .identity-card {
+    width: 84%;
+
+    aspect-ratio: 1.4 / 1;
+
+    margin-top: 32px;
+
+    border-radius: 22px;
+  }
+
+
+  .identity-circle-logo {
+    top: -14%;
+
+    width: 65%;
+  }
+
+
+  .identity-details {
+    bottom: 14px;
+
+    padding:
+      0
+      17px;
+  }
+
+
+  .identity-founded-row {
+    width: 84%;
+
+    column-gap: 9px;
+  }
+
+
+  .identity-founded-art {
+    height: 14px;
+  }
+
+
+  .identity-founded-star {
+    margin-bottom: -5px;
+
+    font-size: 17px;
+  }
+
+
+  .identity-city {
+    margin-top: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.13em;
+  }
+}
+
+
+/* 360px - 389px */
+@media (
+  min-width: 360px
+) and (
+  max-width: 389px
+) {
+
+  .identity-card {
+    width: 83%;
+
+    margin-top: 37px;
+  }
+
+
+  .identity-circle-logo {
+    width: 66%;
+  }
+
+
+  .identity-details {
+    bottom: 15px;
+  }
+
+
+  .identity-city {
+    font-size:
+      clamp(
+        10.3px,
+        2.8vw,
+        11.2px
+      );
+  }
+}
+
+
+/* 390px - 419px */
+@media (
+  min-width: 390px
+) and (
+  max-width: 419px
+) {
+
+  .identity-card {
+    width: 82%;
+
+    margin-top: 40px;
+  }
+
+
+  .identity-details {
+    bottom:
+      clamp(
+        16px,
+        4.2vw,
+        19px
+      );
+  }
+
+
+  .identity-city {
+    font-size:
+      clamp(
+        10.8px,
+        2.75vw,
+        11.8px
+      );
+  }
+}
+
+
+/* 420px - 480px */
+@media (
+  min-width: 420px
+) and (
+  max-width: 480px
+) {
+
+  .identity-card {
+    width: 87%;
+
+    margin-top: 44px;
+  }
+
+
+  .identity-circle-logo {
+    width: 65%;
+  }
+
+
+  .identity-details {
+    bottom:
+      clamp(
+        19px,
+        4.4vw,
+        23px
+      );
+  }
+
+
+  .identity-founded-row {
+    width: 80%;
+  }
+
+
+  .identity-city {
+    font-size:
+      clamp(
+        11.5px,
+        2.65vw,
+        13px
+      );
+  }
+}
+
+
+/* 481px - 767px */
+@media (
+  min-width: 481px
+) and (
+  max-width: 767px
+) {
+
+  .identity-card {
+    width:
+      min(
+        78%,
+        360px
+      );
+
+    margin-top: 48px;
+  }
+
+
+  .identity-circle-logo {
+    width: 64%;
+  }
+
+
+  .identity-details {
+    bottom: 23px;
+  }
+
+
+  .identity-founded-row {
+    width: 79%;
+  }
+
+
+  .identity-city {
+    font-size: 13.5px;
+  }
+}
+
+
+/* Short mobile screens */
+@media (
+  max-height: 740px
+) and (
+  max-width: 767px
+) {
+
+  .identity-card {
+    width: 75%;
+
+    margin-top: 31px;
+  }
+
+
+  .identity-circle-logo {
+    top: -13%;
+
+    width: 63%;
+  }
+
+
+  .identity-details {
+    bottom: 12px;
+  }
+
+
+  .identity-founded-art {
+    height:
+      clamp(
+        12px,
+        3.3vw,
+        15px
+      );
+  }
+
+
+  .identity-founded-star {
+    margin-bottom: -5px;
+
+    font-size:
+      clamp(
+        15px,
+        4.1vw,
+        18px
+      );
+  }
+
+
+  .identity-city {
+    margin-top: 9px;
+
+    font-size:
+      clamp(
+        9px,
+        2.45vw,
+        10.5px
+      );
+  }
+}
+
+
+/* Very short mobile screens */
+@media (
+  max-height: 620px
+) and (
+  max-width: 767px
+) {
+
+  .identity-card {
+    width: 73%;
+
+    margin-top: 27px;
+  }
+
+
+  .identity-circle-logo {
+    top: -12%;
+
+    width: 61%;
+  }
+
+
+  .identity-details {
+    bottom: 9px;
+  }
+
+
+  .identity-founded-row {
+    width: 84%;
+
+    column-gap: 8px;
+  }
+
+
+  .identity-founded-art {
+    height:
+      clamp(
+        10px,
+        3vw,
+        13px
+      );
+  }
+
+
+  .identity-founded-side {
+    gap: 4px;
+  }
+
+
+  .identity-founded-star {
+    margin-bottom: -4px;
+
+    font-size:
+      clamp(
+        13px,
+        3.8vw,
+        16px
+      );
+  }
+
+
+  .identity-city {
+    margin-top: 7px;
+
+    font-size:
+      clamp(
+        8px,
+        2.2vw,
+        9.3px
+      );
+
+    letter-spacing: 0.11em;
+  }
+}
+
+
+
 /* =========================================================
    TABLET / DESKTOP
 

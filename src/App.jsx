@@ -41,34 +41,53 @@ function App() {
         aria-label="Greenwich Skating Club"
       >
         <div className="identity-card">
-          {/* OLD DESIGN — circle badge + G logo. Uncomment to restore.
-          <div
-            className="identity-badge"
-            aria-hidden="true"
-          >
-            <img
-              className="identity-logo"
-              src={`${import.meta.env.BASE_URL}gsc-logo.png`}
-              alt=""
-            />
-          </div>
-          */}
+          <img
+            className="identity-circle-logo"
+            src={`${import.meta.env.BASE_URL}gsc-circle-logo.png`}
+            alt="Greenwich Skating Club"
+          />
 
-          <div className="identity-content">
-            <div className="identity-text-block">
-              {/* OLD DESIGN — text wordmark. Uncomment to restore.
-              <img
-                className="identity-wordmark"
-                src={`${import.meta.env.BASE_URL}gsc-text.png`}
-                alt="Greenwich Skating Club"
-              />
-              */}
+          <div className="identity-details">
+            <div
+              className="identity-founded-row"
+              aria-label="Established 1954"
+            >
+              <div className="identity-founded-side">
+                <img
+                  className="identity-founded-art identity-founded-art--est"
+                  src={`${import.meta.env.BASE_URL}est-logo.png`}
+                  alt="Established"
+                />
 
-              <img
-                className="identity-circle-logo"
-                src={`${import.meta.env.BASE_URL}gsc-circle-logo.png`}
-                alt="Greenwich Skating Club"
-              />
+                <span
+                  className="identity-founded-line"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <span
+                className="identity-founded-star"
+                aria-hidden="true"
+              >
+                ★
+              </span>
+
+              <div className="identity-founded-side">
+                <img
+                  className="identity-founded-art identity-founded-art--year"
+                  src={`${import.meta.env.BASE_URL}1954.png`}
+                  alt="1954"
+                />
+
+                <span
+                  className="identity-founded-line"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+
+            <div className="identity-city">
+              Greenwich, Connecticut
             </div>
           </div>
         </div>
