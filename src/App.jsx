@@ -15,7 +15,16 @@ function App() {
             font-family: "Microgramma Extend Medium";
             src: url("${import.meta.env.BASE_URL}fonts/Microgramma Extend Medium.otf")
               format("opentype");
-            font-weight: 500;
+            font-weight: 200;
+            font-style: normal;
+            font-display: swap;
+          }
+
+          @font-face {
+            font-family: "Microgramma Regular";
+            src: url("${import.meta.env.BASE_URL}fonts/Microgramma Regular.ttf")
+              format("truetype");
+            font-weight: 200;
             font-style: normal;
             font-display: swap;
           }
