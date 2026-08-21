@@ -76,7 +76,7 @@ function App() {
               />
 
               <span className="location-text">
-                11 Cardinal Rd. Greenwich, CT
+                Greenwich, CT
               </span>
             </div>
           </div>
