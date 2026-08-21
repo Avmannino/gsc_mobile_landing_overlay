@@ -217,7 +217,7 @@ svg {
   margin-top: clamp(38px, 5.5dvh, 52px);
 
   padding:
-    clamp(58px, 7.6dvh, 70px)
+    4px
     clamp(20px, 5vw, 30px)
     clamp(20px, 2.9dvh, 27px);
 
@@ -339,7 +339,7 @@ svg {
   flex-direction: column;
   align-items: center;
 
-  transform: translateY(-20px);
+  transform: translateY(-10px);
 }
 
 
