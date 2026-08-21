@@ -69,15 +69,6 @@ function App() {
                 src={`${import.meta.env.BASE_URL}gsc-circle-logo.png`}
                 alt="Greenwich Skating Club"
               />
-
-              <span
-                className="location-red-line"
-                aria-hidden="true"
-              />
-
-              <span className="location-text">
-                Greenwich, CT
-              </span>
             </div>
           </div>
         </div>
@@ -104,6 +95,10 @@ function App() {
               Memberships
             </span>
           </a>
+
+          <span className="location-text overlay-address">
+            11 Cardinal Rd. Greenwich, CT
+          </span>
         </div>
       </section>
     </main>

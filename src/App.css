@@ -243,7 +243,7 @@ svg {
   position: absolute;
   z-index: 0;
 
-  top: 40px;
+  top: 65px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -368,7 +368,7 @@ svg {
   flex-direction: column;
   align-items: center;
 
-  transform: translateY(10px);
+  transform: translateY(35px);
 }
 
 
@@ -414,49 +414,19 @@ svg {
 
 
 /* =========================================================
-   RED DIVIDER LINE
-========================================================= */
-
-.location-red-line {
-  display: block;
-
-  width: clamp(52px, 15vw, 72px);
-  height: 3px;
-
-  margin-top: 5px;
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--gsc-red-dark) 0%,
-      var(--gsc-red) 52%,
-      var(--gsc-red-light) 100%
-    );
-
-  box-shadow:
-    0 0 10px
-    rgba(237, 27, 58, 0.16);
-
-  opacity: 0.7;
-}
-
-
-/* =========================================================
    ADDRESS
 ========================================================= */
 
 .location-text {
   display: block;
 
+  width: 100%;
   max-width: 100%;
 
-  margin-top:
-    clamp(10px, 2dvh, 15px);
+  margin-top: 0;
 
   color:
-    rgba(7, 27, 59, 0.88);
+    rgba(255, 255, 255, 0.58);
 
   font-family:
     "Oswald",
@@ -469,15 +439,15 @@ svg {
     sans-serif;
 
   font-size:
-    clamp(14px, 3.5vw, 17.5px);
+    clamp(13px, 3.2vw, 16px);
 
-  font-weight: 500;
+  font-weight: 200;
 
   letter-spacing:
     clamp(
-      0.1em,
-      0.42vw,
-      0.18em
+      0.08em,
+      0.36vw,
+      0.14em
     );
 
   line-height: 1.25;
@@ -488,8 +458,8 @@ svg {
   white-space: nowrap;
 
   text-shadow:
-    0 1px 2px
-    rgba(255, 255, 255, 0.5);
+    0 1px 4px
+    rgba(0, 0, 0, 0.28);
 }
 
 
@@ -513,6 +483,21 @@ svg {
 
   margin: 0 auto;
   padding: 0;
+}
+
+
+
+.overlay-buttons .overlay-address {
+  justify-self: center;
+
+  margin-top: 2px;
+
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  font-weight: 200;
+
+  opacity: 1;
 }
 
 
@@ -629,9 +614,7 @@ svg {
 ========================================================= */
 
 .overlay-button--secondary {
-  border:
-    2px solid
-    rgba(206, 221, 255, 0.72);
+  border: 0;
 
   background: #00329d !important;
   background-color: #00329d !important;
@@ -708,14 +691,6 @@ svg {
   .identity-text-block {
     width:
       min(100%, 215px);
-  }
-
-
-  .location-red-line {
-    width: 22px;
-    height: 2px;
-
-    margin-top: 9px;
   }
 
 
@@ -819,11 +794,6 @@ svg {
   .identity-text-block {
     width:
       min(100%, 234px);
-  }
-
-
-  .location-red-line {
-    margin-top: 7px;
   }
 
 
@@ -933,11 +903,6 @@ svg {
   }
 
 
-  .location-red-line {
-    margin-top: 5px;
-  }
-
-
   .location-text {
     margin-top:
       clamp(
@@ -952,8 +917,6 @@ svg {
         3.0vw,
         13.8px
       );
-
-      font-weight: 500;
   }
 
 
@@ -1258,14 +1221,6 @@ svg {
   }
 
 
-  .location-red-line {
-    width: 42px;
-    height: 2px;
-
-    margin-top: 11px;
-  }
-
-
   .location-text {
     margin-top: 4px;
 
@@ -1339,13 +1294,6 @@ svg {
   .identity-text-block {
     width:
       min(100%, 186px);
-  }
-
-
-  .location-red-line {
-    width: 36px;
-
-    margin-top: 13px;
   }
 
 
