@@ -207,6 +207,23 @@ svg {
 }
 
 
+/* Scale-only (no opacity) — used on .identity-card specifically.
+   Safari suppresses backdrop-filter on descendants while an
+   ancestor's opacity is mid-animation, causing the card's glass
+   background/blur to render blank until the animation finishes.
+   Dropping the opacity keyframe here avoids that entirely. */
+
+@keyframes card-entrance {
+  from {
+    scale: 0.82;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+
 /* =========================================================
    IDENTITY CARD
 
@@ -1347,10 +1364,10 @@ svg {
 
   transform-origin: center bottom;
 
-  will-change: transform, opacity;
+  will-change: transform;
 
   animation:
-    overlay-entrance 550ms
+    card-entrance 550ms
     cubic-bezier(0.22, 0.61, 0.36, 1)
     0ms both;
 }
