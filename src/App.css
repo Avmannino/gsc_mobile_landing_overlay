@@ -217,7 +217,7 @@ svg {
   margin-top: clamp(38px, 5.5dvh, 52px);
 
   padding:
-    4px clamp(20px, 5vw, 30px) clamp(16px, 2.3dvh, 22px);
+    4px clamp(20px, 5vw, 30px) clamp(6px, 2.3dvh, 12px);
 
   overflow: visible;
 
@@ -461,7 +461,7 @@ svg {
 .overlay-buttons {
   display: grid;
 
-  width: min(79.8%, 327.75px);
+  width: min(calc(79.8% + 10px), 337.75px);
   min-width: 0;
 
   grid-template-columns:
@@ -693,7 +693,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 79.8%;
+    width: calc(79.8% + 10px);
 
     gap: 8px;
   }
@@ -751,7 +751,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 78.85%;
+    width: calc(78.85% + 10px);
   }
 
 
@@ -836,7 +836,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 77.9%;
+    width: calc(77.9% + 10px);
   }
 
 
@@ -921,7 +921,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 87.4%;
+    width: calc(87.4% + 10px);
   }
 
 
@@ -1007,7 +1007,7 @@ svg {
 
   .overlay-buttons {
     width:
-      min(74.1%, 342px);
+      min(calc(74.1% + 10px), 352px);
   }
 
 
@@ -1093,7 +1093,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 71.25%;
+    width: calc(71.25% + 10px);
   }
 
 
@@ -1158,7 +1158,7 @@ svg {
 
 
   .overlay-buttons {
-    width: 69.35%;
+    width: calc(69.35% + 10px);
   }
 
 
@@ -1409,6 +1409,8 @@ svg {
 
   object-fit: contain;
 
+  opacity: 0.7;
+
   filter:
     drop-shadow(0 1px 2px rgba(0, 0, 0, 0.28));
 }
@@ -1417,14 +1419,14 @@ svg {
 .identity-founded-art--est {
   max-width: 72%;
 
-  transform: translateX(12px);
+  transform: translateX(11px);
 }
 
 
 .identity-founded-art--year {
   max-width: 68%;
 
-  transform: translateX(-12px);
+  transform: translateX(-11px);
 }
 
 

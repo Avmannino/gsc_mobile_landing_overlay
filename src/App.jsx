@@ -143,6 +143,7 @@ function App() {
             </span>
           </a>
 
+          {/* OLD DESIGN — address. Uncomment to restore.
           <span className="location-text overlay-address">
             <svg
               className="location-pin-icon"
@@ -160,6 +161,7 @@ function App() {
               11 Cardinal Rd. Greenwich, CT 06830
             </span>
           </span>
+          */}
         </div>
       </section>
     </main>
