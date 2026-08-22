@@ -188,7 +188,7 @@ svg {
   gap: clamp(18px, 2.5dvh, 22px);
 
   transform:
-    translateX(-50%) translateY(-93px);
+    translateX(-50%) translateY(-108px);
 }
 
 
@@ -637,6 +637,76 @@ svg {
 
 
 /* =========================================================
+   SOCIAL ROW
+========================================================= */
+
+.overlay-social {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(8px, 2vw, 12px);
+
+  margin-top: clamp(10px, 1.6dvh, 14px);
+}
+
+
+.overlay-social-icon {
+  display: grid;
+
+  flex: 0 0 auto;
+
+  width:
+    clamp(26px, 6.5vw, 32px);
+  height:
+    clamp(26px, 6.5vw, 32px);
+
+  place-items: center;
+
+  border:
+    1.25px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+
+  color: var(--gsc-white);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+
+.overlay-social-icon svg {
+  width: 55%;
+  height: 55%;
+}
+
+
+.overlay-social-icon:hover,
+.overlay-social-icon:focus-visible {
+  outline: none;
+
+  border-color: rgba(255, 255, 255, 0.9);
+
+  background: rgba(255, 255, 255, 0.16);
+
+  transform: translateY(-2px);
+}
+
+
+.overlay-social-icon:active {
+  transform:
+    translateY(0) scale(0.94);
+}
+
+
+/* =========================================================
    320px - 359px
 ========================================================= */
 
@@ -653,7 +723,7 @@ svg {
     gap: 14px;
 
     transform:
-      translateX(-50%) translateY(-77px);
+      translateX(-50%) translateY(-92px);
   }
 
 
@@ -736,7 +806,7 @@ svg {
         18px);
 
     transform:
-      translateX(-50%) translateY(-83px);
+      translateX(-50%) translateY(-98px);
   }
 
 
@@ -821,7 +891,7 @@ svg {
         19px);
 
     transform:
-      translateX(-50%) translateY(-87px);
+      translateX(-50%) translateY(-102px);
   }
 
 
@@ -906,7 +976,7 @@ svg {
         20px);
 
     transform:
-      translateX(-50%) translateY(-89px);
+      translateX(-50%) translateY(-104px);
   }
 
 
@@ -989,7 +1059,7 @@ svg {
         22px);
 
     transform:
-      translateX(-50%) translateY(-91px);
+      translateX(-50%) translateY(-106px);
   }
 
 
@@ -1076,7 +1146,7 @@ svg {
     gap: 13px;
 
     transform:
-      translateX(-50%) translateY(-75px);
+      translateX(-50%) translateY(-90px);
   }
 
 
@@ -1141,7 +1211,7 @@ svg {
     gap: 10px;
 
     transform:
-      translateX(-50%) translateY(-69px);
+      translateX(-50%) translateY(-84px);
   }
 
 
@@ -1433,7 +1503,7 @@ svg {
 .identity-founded-line {
   display: block;
 
-  width: calc(52.65% + 4px);
+  width: calc(52.65% + 3px);
 
   height: 1.5px;
 
