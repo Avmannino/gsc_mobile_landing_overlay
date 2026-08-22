@@ -121,7 +121,7 @@ function App() {
             </div>
 
             <div className="identity-city">
-              Greenwich, CT
+              Greenwich, CT
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@ function App() {
             </svg>
 
             <span>
-              11 Cardinal Rd. Greenwich, CT 06830
+              11 Cardinal Rd. Greenwich, CT 06830
             </span>
           </span>
           */}
