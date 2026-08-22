@@ -1431,7 +1431,7 @@ svg {
 .identity-founded-line {
   display: block;
 
-  width: calc(52.65% + 2px);
+  width: calc(52.65% + 4px);
 
   height: 1.5px;
 
