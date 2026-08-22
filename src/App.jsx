@@ -198,7 +198,7 @@ function App() {
             aria-label="Follow Greenwich Skating Club on Instagram"
           >
             <svg
-              viewBox="0 0 24 24"
+              viewBox="-2.4 -2.4 28.8 28.8"
               aria-hidden="true"
               focusable="false"
             >

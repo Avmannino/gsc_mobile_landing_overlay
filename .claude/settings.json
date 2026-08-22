@@ -17,7 +17,8 @@
       "Bash(cd /home/avmannino/development/code/projects/gsc/gsc_mobile_landing_overlay *)",
       "Bash(curl -s \"https://avmannino.github.io/gsc_mobile_landing_overlay/\")",
       "Bash(python3 -c ' *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(cat)"
     ],
     "additionalDirectories": [
       "/home/avmannino/development/code/projects/gsc/gsc_mobile_landing_overlay/public",
