@@ -1611,6 +1611,8 @@ svg {
   box-shadow:
     0 0 6px rgba(229, 24, 55, 0.2);
 
+  transform: translateY(3px);
+
   transform-origin: center bottom;
 
   animation:
@@ -1655,7 +1657,7 @@ svg {
   filter:
     drop-shadow(0 0 4px rgba(229, 24, 55, 0.18));
 
-  transform: translateY(1px);
+  transform: translateY(4px);
 
   transform-origin: center bottom;
 
